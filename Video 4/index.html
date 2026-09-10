@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+    <img  height= "230" src="image.png" alt="Train Image">
+    <br>
+    <!-- <table>
+   <tr>       ← row
+      <th>    ← heading
+      <th>    ← heading
+   </tr>
+
+   <tr>       ← another row
+      <td>    ← data
+      <td>    ← data
+   </tr>
+</table> -->
+    <table>
+        <!-- used to write caption -->
+        <caption>Employee Detail</caption>
+
+ <!-- thead used for header content -->
+        <thead> 
+        <!-- first table row means tr has table heading -->
+         <!-- it has main heading  -->
+        <tr>
+           <th>Name</th>
+           <th>Designation</th>
+           <th>Language</th>
+        </tr>
+        </thead>
+        <!-- tbody help in putting table content inside table body-->
+        <tbody>
+        <!-- second table row has table data -->
+        <tr>
+            <td>Tanya</td>
+            <td>Programmer</td>
+            <td>C++</td>
+        </tr>
+       
+        <!-- third row has next person data and so on rows goes added.. -->
+        <tr>
+            <td>Shubman</td>
+            <td>Programmer</td>
+            <td>Java++</td>
+        </tr>
+        <!-- this colspan means now the name shubman will cover the space of 2 columns run the code and see the result -->
+         <!-- colspan simple menas ki vo kitne columns gherega example isme 2 gher rha h.. -->
+          <!-- Basic part
+<table>
+
+➡️ Starts the table.
+
+<tr>
+
+➡️ Creates a row.
+
+<th>Name</th>
+
+➡️ Creates a heading cell.
+
+<td>Tanya</td>
+
+➡️ Creates a normal data cell.
+
+colspan="2"
+<td colspan="2">Shubman</td>
+
+➡️ colspan="2" means Shubman takes the space of 2 columns.
+
+Normally:
+
+| Shubman | Java++ |
+
+With colspan="2":
+
+|       Shubman       | Java++ |
+       ↑
+   2 columns
+
+colspan = how many columns the cell covers.
+
+rowspan="2"
+<td rowspan="2">Shubman</td>
+
+➡️ rowspan="2" means Shubman takes the space of 2 rows.
+
+Think:
+
+| Shubman | Java++ |
+|         | Python |
+   ↑
+ 2 rows
+
+rowspan = how many rows the cell covers.
+
+🧠 Super easy to remember
+
+colspan → column → left/right → horizontal
+
+rowspan → row → up/down → vertical -->
+        <tr>
+            <td colspan="2">Shubman</td>
+            <td>Java</td>
+        </tr>
+<!-- same for rowspan -->
+        <tr>
+            <td rowspan="2">Shubman</td>
+            <td>Java</td>
+        </tr>
+        </tbody>
+        <!-- used for footer content -->
+<tfoot>
+       
+               <tr>
+            <td rowspan="2">Shubman</td>
+            <td>footer</td>
+        </tr>
+        </tfoot>
+    </table>
+    <!-- unordered list -->
+     <ul>
+        <li>Tanya</li>
+        <li>Mohini</li>
+        <li>Shubman</li>
+     </ul>
+    <!-- ordered list -->
+     <ol>
+        <li>Tanya</li>
+        <li>Mohini</li>
+        <li>Shubman</li>
+     </ol>
+     <!-- i can change type of unordered list like square circle example -->
+        <ul type="square">
+        <li>Tanya</li>
+        <li>Mohini</li>
+        <li>Shubman</li>
+     </ul>
+       <!-- i can change type of ordered list a means lowercase alphabetical order A menas uppercase-->
+     <ol type="A">
+        <li>Tanya</li>
+        <li>Mohini</li>
+        <li>Shubman</li>
+     </ol>
+</body>
+</html>
