@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms - Lets learn it</title>
+</head>
+
+<body>
+    <h1>Form to apply for Sigma Web Development Course - Teaching Assistant</h1>
+    <!-- form tag to fill form -->
+    <form action="post">
+        <!-- div give space and put it into new line yes i know br tag bhi hota h but use hm use nhi krte..why will seee in next video if u want how erase div then see and agin put div then see from code -->
+        <div>
+
+            <label for="username">Enter your username</label>
+            <!-- means i add id alg se pehle nhi thi which means ye id ab kisi or ko nhi mil skti exmaple my adhat card id vo sirf mri h -->
+            <!-- placeholder means enter your usename ke andar hm jo bhi likh rhe h us box m ex Tanya -->
+            <input type="text" id="username" name="username" placeholder="Enter your username">
+        </div>
+        <div>
+
+            <label for="male">Male</label>
+            <!-- radio is used means hwn after run cide i fill female so one dot see or i fill male ex when i put i m not a robot by tick mark this tick is radio as dot in male and female because ek time p ek bhi select kr skte hai male ya female dono nhi hote -->
+            <input type="radio" id="male" name="gender" value="male">
+
+            <label for="female">Female</label>
+            <input type="radio" id="female" name="gender" value="female">
+        </div>
+        <div>
+            <input type="checkbox" name="subscribe" id="Subscribe" value="yes ">
+            <label for="subscribe">Subscribe to newslatter</label>
+        </div>
+        <div>
+            <!-- in label we write for so hm textarea m id tag add krenge beacuse for ke saath id hoti h -->
+            <label for="comment">Enter your comment</label>
+            <!-- abhi ke liye lga rhi hu  because i dont know css till now then after i will use div for line break -->
+            <br>
+            <textarea id="comment" name="Comment" rows="4" cols="40"> </textarea>
+        </div>
+        <div>
+            <!-- look after run code select button -->
+            <select name="fruits">
+                <option value="apple">Apple</option>
+                <option value="banana">Banana</option>
+                <option value="cherry">Cherry</option>
+            </select>
+
+        </div>
+    </form>
+</body>
+
+</html>
