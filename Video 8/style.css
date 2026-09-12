@@ -1,0 +1,12 @@
+/* . means class..we do stylish in css for class by . */
+.red{
+color: rgb(201, 142, 53);
+}
+
+.bg-yellow{
+    background-color: rgb(255, 68, 0);
+}
+/* # means id..we do styling in css of id by # */
+#firstdiv{
+background-color: rgb(23, 215, 215);
+}
