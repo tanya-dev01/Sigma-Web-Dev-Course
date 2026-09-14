@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- control used for play pause voulume of video...after contorl i can use varoius attribute like loop-> play video in loop
+     autoplay->play after run no need to click on play button.
+     next attribute is "muted"->mute the video example we write 
+     <video width="530" src="WIN
+     _20240416_21_47_49_Pro.mp4" controls autoplay muted></video> -->
+    <!-- next is poster example<video width="530" src="WIN_20240416_21_47_49_Pro.mp4" controls loop muted poster="Screenshot 2024-05-16 131316.png"></video>
+      then it will show image in video thumbnail but after play it play the video..see it and run it.. -->
+    <!-- IMPORTANT -->
+    <!-- see HARRY CHEETSHEET ON GOOGLE AND SAW ALL NOTES THERE.. -->
+    <video width="530" src="WIN_20240416_21_47_49_Pro.mp4" controls loop muted
+        poster="Screenshot 2024-05-16 131316.png"></video>
+    <!-- audio tag -->
+    <!-- these like autoplay muted loop are attributes of audio tag-->
+    <!-- preload tells the browser how much of the audio should be loaded before the user plays it.
+
+Example:
+
+<audio src="song.mp3" controls preload="auto"></audio>
+
+Main values:
+
+auto → browser can load the audio in advance.
+metadata → loads only basic information like duration.
+none → doesn't preload the audio -->
+    <audio src="WIN_20240416_21_35_56_Pro.wav" controls autoplay loop muted></audio>
+    <!-- this svg is used like when we play any video or for example net nhi chl rha to jo
+      video m circle aata h vo kitna bda or kis color ka aayega here black h example and which is stroke here and stroke-width is 3 see after run code -->
+    <!-- width="200" → SVG area ka width
+height="200" → SVG area ka height
+r="50" → circle kitna bada hoga
+fill="black" → circle ke andar ka color
+stroke="red" → circle ke bahar ki border/outline
+stroke-width="3" → border ki thickness 3px -->
+
+    <!-- m svg file ko alg se bhi save kr skti hu example in video 9 folder i save svg and copy this svg in svg folder -->
+    <svg height="100" width="100">
+        <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+    </svg>
+    <!-- and then after copy the svg i came in this index.html folder and made this img tag put img.svg in src and run it saw
+        -->
+    <!-- here you will saw svg means ek or gol circle nhi dikhega  -->
+    <img src="img.svg" alt="this is my svg">
+    <!-- first run till now and comment this  <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100">
+        <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+     </svg> and saw and then uncomment this then saw.. -->
+    <!-- when i write this tab dikhega..do circle -->
+    <!--  <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100">
+        <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+     </svg> -->
+
+    <!-- iframe -->
+    <iframe src="https://www.codewithharry.com" width="600" height="400"></iframe>
+
+</body>
+
+</html>
