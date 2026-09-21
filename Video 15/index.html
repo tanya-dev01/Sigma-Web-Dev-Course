@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSs Boxmodel</title>
+    <style>
+        /* esa krne se i m a box vali chij after run chipak jayegi
+        see this by commenting pehle nhi chipak rhi thi..pehle browser hme pehle se hi
+        margin or padding de rha tha */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ye vo style h jo m dono boxes ko dena chati hu because div m mene dono ko same box naam ki class de rkhi h so .box se dono ko backgrond color milega 
+        i can give multiple class to same element
+        yha mene dono ko ek hi background color de deiya h*/
+        .box {
+            background-color: aqua;
+        }
+
+        /* ye only box1 ke liye */
+        /* see all margin padding by inspect elemnt and see the sqaure box diagram to understand content oadding borger margin.. */
+        .box1 {
+            color: yellow;
+            padding: 10px;
+            margin: 35px;
+            border: 2px solid black;
+            height: 200px;
+            /* box sising :border boxmenas meri jo height hai vo border or padding or content  teeno ko kilake hai margin ko nhi bs border or padding ko kyuki margin bhar hoti hai.. agr me ye box sizing nhi likhti only height hi likhti iska matlab isme border padding or content nhi h..*/
+            box-sizing: border-box;
+        }
+
+        /* ye only box2 ke liye */
+        .box2 {
+            color: red;
+            padding: 10px;
+            /* if two margin overlap for ex in box1 margin is 35 and in box 2 margin is 25 so total margin between two should be 65 see harry video 18 at 15 min but the margin will be 35 because they overlap when margin overlap so the box with maximum amrgin will come so margin bwteen them will be 35 see after run see image in this folder  */
+            margin: 25px;
+            border: 2px solid blue;
+            height: 200px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box box1">
+        I m a box.
+    </div>
+    <div class="box box2">
+        I m a box.
+    </div>
+</body>
+
+</html>
