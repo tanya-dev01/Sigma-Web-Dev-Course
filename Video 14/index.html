@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors</title>
+
+    <style>
+        /* element selector */
+        /* div{
+            background-color: red;
+        } */
+        /* .red means ye usi div ko red krega jiski class red h
+           <div class="red">
+        I m a div
+    </div>
+    here in this class is red so ye bs..i m a div vali line red krega Hey! Tanya ko red nhi krega..
+    if i write
+    div{
+            background-color: red;
+        } 
+            if i write this to ye dono lines ko red krta..but m sirf ek hi line yani..i m a div ko hi red chahti thi so 
+            i add class in div see down..ab ye sirf isi ko red krega..
+            <div class="red">
+        I m a div
+    </div>
+     */
+        /* .red because . signifies that it is a class selector.. */
+        .red {
+            background-color: red;
+        }
+
+        /* Id selector */
+        /* means jiski bhi id green h vo green ho jayega..
+        here
+         <div id="green">
+        Hey! Tanya
+    </div>
+    here is div ki id green ho so Hey! Tanya green ho jayega because mene is div m green add kiya h then i write this line which
+    is written here down and add style to it by making background color yellow..
+     */
+        #green {
+            background-color: yellow;
+        }
+
+        /* Child selector */
+        /* means div k andar jo paragraph h uska color blue and background color brown krdo..because ye paragraph child h div ka.. */
+        div>p {
+            color: blue;
+            background-color: rgb(14, 210, 56);
+        }
+
+        /* if i write like this..
+          <div class="red">
+        I m a div
+        <article>
+            <p>I m a para</p>
+
+        </article>
+    </div>
+    here div ke andar article h or article k andar paragraph h look in body i write code..so now it i do 
+        div > p {
+            color: blue;
+            background-color: rgb(14, 210, 56);
+        }
+            so ye paragraph ko color nhi krega because ye direct child class vali chij ko color krta hai..
+            exaample; this see down..
+              <div class="red">
+        I m a div
+        <p>I m a para</p>
+    </div>
+    but if i want to color this..
+      <div class="red">
+        I m a div
+        <article>
+            <p>I m a para</p>
+
+        </article>
+    </div>
+    i will use descendent selector
+    */
+        /* Descendent Selector */
+        /* means div k andar p ho besak div k article k andar h but div ke andar bhi h usee color krdo..here i use space between div and p notice..
+        div p{
+ 
+            color: blue;
+            background-color: rgb(14, 210, 56);
+        
+        } */
+
+        div p {
+            color: blue;
+            background-color: rgb(14, 210, 56);
+        }
+
+        /* simply this */
+        /* div > p    → direct child
+div p      → anywhere inside div
+ */
+
+        /* Universal selector.. */
+        /* means sare elements ki margin 0 or padding 0 krdo ..'*' means sare*/
+        /* margin or padding se sare chipak jayenge..see by commenting this universal selectors and then again uncommenting and see.. */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Pseudo Selector */
+        /* for google link tag */
+        a:visited {
+            color: rgb(214, 127, 13);
+        }
+
+        /* for facebook */
+        a:link {
+            color: rgb(26, 227, 227);
+        }
+
+        /* jab me code ko run krne ke baad kisi link pe click krungi to vo background color ye dikhaegi see after run.. */
+        a:active {
+            background-color: rgb(6, 78, 232);
+        }
+
+        /* when i hover on link it show this background color */
+        a:hover {
+            background-color: cadetblue;
+        }
+
+        /* means jha jha p apne parant ka first child h vha backgrond color ye krdo..*/
+        p:first-child {
+            background-color: rgb(216, 130, 18);
+        }
+
+        /* ex...
+        <main class="one">
+      <p>i m one</p>
+      <p>i m second</p>
+    </main>
+    yha p first child h apne parent yani "main" ka
+       */
+    </style>
+</head>
+
+<body>
+    <main class="one">
+        <p>i m one</p>
+        <p>i m second</p>
+    </main>
+
+    <div class="red">
+        I m a div
+        <p>I m a para</p>
+    </div>
+
+    <div class="red">
+        I m a div
+        <article>
+            <p>I m a para</p>
+
+        </article>
+    </div>
+
+    <div id="green">
+        Hey! Tanya
+    </div>
+    <a href="https://www.google.com">Go to Google</a>
+    <a href="https://www.facebook2.com">Go to Facebook</a>
+</body>
+
+</html>
