@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap" rel="stylesheet">
+    <!-- In HTML, font means the style/appearance of text.
+
+Usually we control fonts with CSS:
+
+p {
+  font-family: Arial;
+  font-size: 20px;
+}
+font-family → type of font
+font-size → size of text
+font-weight → boldness
+font-style → normal/italic -->
+    <style>
+        /* baloo bhai from google fonts.. */
+        /* @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap'); */
+        h1 {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 20px;
+        }
+
+        p {
+
+
+            font-family: "Baloo Bhaijaan 2", sans-serif;
+
+            font-size: 20px;
+            /* font-style: italic;
+
+    font-weight: 400; */
+            /* line-height = space between lines of text.
+
+Example:
+
+p {
+  line-height: 2;
+}
+Hello, I am Tanya.
+
+I am learning CSS.
+
+I am learning HTML.
+line-height: 1 → lines close
+line-height: 2 → more space
+line-height: 30px → line height is 30px
+
+Remember:
+font-size → size of letters
+line-height → space between lines. */
+            line-height: 2;
+        }
+
+        h2 {
+            /* text-transfrom help in making first letter capital..
+            example:     <h2>about Fonts</h2> 
+            here about ka a chota h but when u run it you will find it capital see.. */
+            /* text aline centre means put the word in centre after run "about fonts" is in centre.. */
+            text-align: center;
+            text-transform: capitalize;
+            text-decoration: underline;
+            text-decoration-color: burlywood;
+            /* thickness of underline line */
+            text-decoration-thickness: 7px;
+            /* after run you see about font vali line ..it move from left side..see it after commenting the difference.. */
+            /* text-overflow = what to show when text doesn't fit.
+
+Example:
+
+p {
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+Result:
+
+Hello, I am...
+
+Two common values:
+
+ellipsis → shows ... ✅
+clip → simply cuts the extra text ✂️
+
+Remember: text-overflow: ellipsis = cut text + .... */
+            text-indent: 45px;
+            text-overflow: ellipsis;
+        }
+
+        .lorem {
+            border: 2px solid red;
+            width: 145px;
+            /* word-break = decides how a long word breaks when it doesn't fit inside the box. */
+            /* example if i write something long word which dont fits in 145px width box
+            so the next half word come in next line 
+            ex:tan
+            ya
+            here tan come in one line in next line ya come like when i write something or search something
+            on google the text i write when it dont fit in the line it come on next line*/
+            word-break: break-all;
+            /* text-overflow: ellipsis; */
+            /* when the text move out from the box then it make it hidden ans show dots see it by commenting the overflow line.. */
+            overflow: hidden;
+/* text overflow clip means it dont show dots and also dont show the text out of
+box and fit the content inside box perfrctly see by commenting the line 
+  text-overflow: ellipsis; and
+  overflow: hidden; this by putting width=45px; i m now changing the width to 145px u see
+  it by 45px by keeping 
+   border: 2px solid red;
+            width: 45px;
+               overflow: hidden;
+               text-overflow: clip;
+               these all lines..
+   */
+               text-overflow: clip;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Fonts</h1>
+        <h2>about Fonts</h2>
+        <p>This is a video on fonts</p>
+        <p class="lorem">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt eos illum tempore
+            consectetur quas, sapiente iusto. Ipsa similique accusamus dolor harum hic dolorem. Perspiciatis cupiditate
+            quaerat, iure, officia, vero consequuntur veniam ullam facilis nesciunt quasi animi magnam deserunt
+            temporibus dicta consequatur sit atque et vitae quos veritatis. Illo, debitis fuga iste aperiam ratione
+            optio maxime suscipit ea nam molestiae cum enim voluptatum quas similique fugiat? Esse iste voluptas
+            veritatis quod, dolorem maxime accusamus. Et soluta maxime veniam?</p>
+    </div>
+</body>
+
+</html>
