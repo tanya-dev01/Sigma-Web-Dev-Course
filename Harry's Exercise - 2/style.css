@@ -1,0 +1,14 @@
+div>p:first-child{     
+    background-color:yellow ;     
+    color: red;     
+    font-style: normal;    
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     } 
+     
+     
+     p{ 
+        background-color: blue; 
+        color: rgb(255, 246, 246); 
+        font-style: normal; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+        font-size: medium; font-weight :500; 
+    }
