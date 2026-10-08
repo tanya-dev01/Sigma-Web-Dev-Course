@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* website looking bad see my commenting first .conatiner see by commeting every thing; */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* understand "rem" which stand for r means "root" em means itna guna as we understand em in niche dekho rem menas bs "root" ka itna guna..*/
+        /* rem = relative to the root (html) font size. */
+        /* remember html is a "root element" */
+        html {
+            /* after 12px this is a box seems 12px small but if i want ki mera jo lorem wala paragraph h uska size root element se do guna jada ho jay means this is a box se doguna bada ho jaye lorem so i will write "rem" how see niche .container*/
+            font-size: 12px;
+        }
+
+        /* here so size become 24px which is 12*2*/
+        /* .contaier p{
+                font-size: 2rem;
+            } */
+
+        .box {
+            /* i use       box-sizing: border-box; because when i use width 2048 px i was showing alittle bit horizontal scrollbar si ths fix it genrally 2048px fits perfectly we use box sizing to fix it otherwise no need.. */
+            box-sizing: border-box;
+            border: 2px solid black;
+            /* 1. px (pixels) → fixed size */
+            /* Use when you want precise/fixed sizing.here 2048 px  */
+            /* width: 2048px;*/
+            /* width: 2048px; → fixed width, always 2048px.
+width: 100vw; → 100% of viewport width, changes with screen.menas it fits in the screen see after run..no horizontal scrollbar
+
+If screen width = 2048px:
+
+2048px → fits exactly ✅
+2049px → 1px wider than screen → horizontal overflow/scrollbar ❌ which is bad..
+100vw → automatically fits the viewport ✅
+
+So vw is useful for responsive sizing. */
+            /* here 100vw fits in the screen see after run.. */
+            /* width: 100vw; */
+            /* i changed 100 to 80 vw*/
+            /* vw->viewport width */
+            width: 80vw;
+            height: 10vh;
+            /* if i want  width: 80vw; it to put in center so i will do margin auto then the div came in centre margin auto set marin to both left and right
+ ....Remember margin auto only apply on block elemnt as div is block if it is inline then it will not
+ example if    <span class="box">
+        This is a box.
+    </span> if it is span then inline so it will not put it in centre or na hi span m width lga skte hai whyyy we will see in next videos.. */
+            margin: auto;
+            background-color: aquamarine;
+        }
+
+        .container {
+            box-sizing: border-box;
+            border: 2px solid black;
+            width: 80vw;
+            /* viewport height->vh */
+            height: 80vh;
+            /* margin:23px auto; 
+            here 23px is top bottom margin and auto is left right margin  */
+            /* margin: 23px auto; */
+            /* font size 16 px is default if u dont write font size 16 px fir bhi ye ese hi rhega but if u want to change then u can..but after writing font size 16px no change in font because vo defalut hai na bhi likho to bhi ese hi rhega */
+            font-size: 16px;
+            background-color: aquamarine;
+        }
+
+        /* see it by commenting upper .container css or delete it by copy then run uppar by paste if not commented.. */
+
+        .container {
+            box-sizing: border-box;
+            border: 2px solid black;
+            width: 80vw;
+            /* viewport height->vh */
+            /* height: 80vh; */
+            /* means jo hmara lorem h uski minimum height 80 vh to rkho hi chahe usme kuch likhu ya na likhu ye box bda hotajayega see lorem which is too bigger by commenting upar wala .conatiner */
+            min-height: 80vh;
+            /* margin:23px auto; 
+            here 23px is top bottom margin and auto is left right margin  */
+            margin: 23px auto;
+            /* font size 16 px is default if u dont write font size 16 px fir bhi ye ese hi rhega but if u want to change then u can..but after writing font size 16px no change in font because vo defalut hai na bhi likho to bhi ese hi rhega */
+            font-size: 16px;
+            background-color: aquamarine;
+        }
+
+        .container p {
+            /* this means upar dekho font size 16px h and i write here font size 2em means ye 16 px ka doguna hoga means 32 px ho jayega fot size em means itna mutiply hoga means itna guna hoga..if font size :18px
+font size:2em so it will make it 36.. */
+
+            /* one more thing if i dont write
+  .container{
+           box-sizing: border-box;
+            border: 2px solid black;
+            width: 80vw;
+              height: 80vh;
+               margin:23px auto;
+                 background-color: aquamarine;
+            }
+                 here in container i have not write font size but in this i write font size :2em; so it automatically make 32 size but by defalut font size is 16 px and mtiply 2 make it 32px.. */
+            font-size: 2em;
+            /* so jo dibbe m lorem h vo half m aa jayega means parent ki 50 percent.. */
+            width: 50%;
+            border: 2px solid red;
+        }
+
+        .mycont {
+            /* Remember: border-box → total width/height includes padding + border. */
+            /* example .box {
+    width: 200px;
+    padding: 20px;
+    border: 5px solid black;
+    box-sizing: border-box;
+}
+
+/*
+border-box means:
+The TOTAL box width = 200px.
+
+200px already contains:
+content + padding + border.
+
+So we DON'T add:
+200 + 20 + 20 + 5 + 5 ❌
+
+Everything fits INSIDE the 200px box. ✅
+*/
+            box-sizing: border-box;
+            margin: 2px auto;
+            border: 2px solid black;
+            /* background-color: rgb(209, 141, 40); */
+            color: blue;
+            font-size: 22px;
+            /* vmin and vmax means as we know in phone height always greater than width so in phone vmin will be width because width choti hoti h but in laptop vmin will be height and vmax will be width*/
+            /* here   width:100vmin ; means 100 min of height in laptop on phn its width so for latop 100vmin means 100 "vh(viewport height)" because in laptop height is minimum here  width:100vmin ; or  width:100vh; both are equal nothing will change*/
+            /* width:100vmin ;
+           */
+
+
+            /* here 80vw = 80% of the browser's viewport width.
+
+Example:
+
+If browser width = 1000px:
+
+80vw = 800px ✅
+
+So your .container becomes 800px wide.
+
+🧠 vw = viewport width
+80vw = 80% of screen width.  */
+            width: 80vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        This is a box.
+    </div>
+    <div class="container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi aut mollitia sequi eum cupiditate accusantium
+            doloribus sint consequuntur, consectetur ullam consequatur quae voluptates ut ab distinctio, perspiciatis
+            illum repudiandae quaerat. Dolore enim tempora recusandae aut, cumque eligendi quae esse dignissimos odit
+            officia minus ut quas eveniet quod similique numquam explicabo, aperiam nostrum porro. Voluptates, quas
+            possimus.</p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam reprehenderit excepturi esse odit amet
+        laudantium aliquid nisi, assumenda laboriosam, cupiditate veniam. Necessitatibus, dolorem illum debitis
+        consequatur vitae officia, unde ullam reprehenderit enim rerum eaque ex architecto minus voluptate quae hic!
+        Quia magnam minus esse nam modi ex beatae optio cupiditate, impedit recusandae dignissimos animi non corporis
+        sequi minima error! Quo, culpa reprehenderit neque sint voluptas nobis tempora praesentium harum, eligendi enim,
+        excepturi maiores. Illum, suscipit dolor perferendis placeat provident consectetur quisquam in aperiam. Porro
+        ullam veniam quam, sed optio quasi a repudiandae numquam officia alias, ducimus excepturi fuga incidunt nisi
+        sunt autem debitis expedita itaque libero dolor provident corrupti. Corporis, ducimus. Laudantium, eligendi
+        dignissimos ab repellat repudiandae, sint explicabo, nulla adipisci impedit iure itaque reiciendis enim? At rem
+        consequatur quae culpa ad doloremque nam voluptas laborum provident quidem optio, deleniti quasi cupiditate
+        dolor officia nemo? Eius nisi voluptatibus, officia blanditiis autem similique sapiente a non aliquid veniam
+        nobis cupiditate tempora quaerat error, commodi animi porro in esse ea vitae harum laudantium inventore
+        repellat. Perspiciatis, beatae hic at, similique tenetur enim magni cupiditate earum aliquid minima distinctio
+        odio. Incidunt consectetur quae consequatur porro dolorum doloribus eveniet minus, iure obcaecati aspernatur eum
+        modi fuga beatae aliquam a dolores repellat veritatis suscipit ab ea. Sed nulla animi quae itaque obcaecati
+        quod, iure amet eveniet aliquid, voluptatibus culpa alias, neque id molestiae. In dolores tempore maiores labore
+        ut repellat est rem nulla unde id aspernatur, quod necessitatibus quis voluptas molestias amet dolor accusamus
+        ipsum. Corporis eius at dignissimos, aperiam molestiae maxime distinctio reprehenderit amet numquam quod autem
+        libero. Eius inventore eligendi quod assumenda praesentium nisi quidem id dicta veniam, rerum quia placeat
+        libero dolores dolor, eaque a porro maxime natus quo incidunt reprehenderit commodi cupiditate non voluptatum?
+        Aliquam corrupti repellendus dolor ullam nemo amet, id dolore maxime veritatis esse ut cumque expedita libero
+        totam laboriosam ipsam aut nulla architecto fugit alias eaque vel? Nam voluptatum eveniet perspiciatis
+        voluptatem adipisci quo debitis veritatis suscipit assumenda provident porro praesentium aperiam corporis
+        incidunt dicta placeat, ducimus cupiditate odio! Incidunt nostrum iusto blanditiis ratione libero aliquam illo!
+        Accusamus, architecto ullam reiciendis porro quidem nihil exercitationem eveniet, obcaecati pariatur eligendi
+        sint qui quos corrupti provident placeat minus ab dolorem dolore perspiciatis. Quasi minus, odio sit numquam
+        sapiente excepturi. Sequi ipsa perspiciatis placeat et laudantium exercitationem aperiam aliquam, facere
+        quibusdam! Quam, possimus tempore? In itaque quisquam, accusamus minima dolorem animi adipisci. Quaerat
+        temporibus, similique maxime nihil atque, ullam incidunt perferendis delectus repellendus numquam quam
+        repudiandae architecto obcaecati saepe facilis a beatae corporis sapiente. Error obcaecati cupiditate corporis
+        ad, sit cum? Voluptatem repellendus deleniti hic fuga tenetur! Quae maiores enim veniam reiciendis cum
+        voluptatibus unde ratione quidem, fugit aperiam vitae quas consequuntur minus mollitia quibusdam quia a, aliquam
+        ut quod pariatur? Eveniet accusantium sint voluptatum dolorum, ut fuga vel doloremque quasi nemo id deserunt
+        esse necessitatibus modi odio, consequatur hic mollitia at excepturi est. Expedita, unde numquam ad pariatur rem
+        facere dolorem ipsa incidunt molestiae modi distinctio corrupti, impedit neque nobis ea cupiditate? Magnam
+        accusamus nisi fugiat est quibusdam nobis voluptates dolores earum officia dolorem iusto tempore cupiditate
+        veritatis nemo non, porro consequuntur temporibus ab. Nisi, magni mollitia. Sit dicta assumenda, ea cumque
+        similique, illum accusamus fuga exercitationem commodi asperiores dolor corrupti repellat voluptas voluptatibus
+        alias esse quis numquam minima ipsum amet error nostrum. Sint commodi sed suscipit molestiae. Aut unde nobis ad?
+        Dignissimos libero mollitia quos officiis quia, veniam doloremque! Vel quae cum perferendis eligendi delectus,
+        aspernatur in iusto. Facere itaque pariatur id dignissimos a deleniti consequatur dolorem, quo adipisci
+        distinctio, odit nemo perferendis dolores temporibus ea eaque optio minima! Autem sunt aliquid nesciunt optio ab
+        commodi minima debitis odio nulla sapiente eligendi distinctio natus, quo unde quam pariatur esse maiores fugit
+        saepe maxime sed ipsum. Vel, pariatur iste placeat obcaecati quam dolorem perspiciatis ea laudantium autem
+        tempore cum saepe iure aliquam. Explicabo commodi iure dignissimos magnam quisquam. Cumque accusantium dolorum,
+        labore exercitationem non nostrum nesciunt rerum deserunt quos ipsam ex sequi minima earum eligendi! Aspernatur
+        porro blanditiis impedit quasi placeat! Nihil eaque suscipit dolore porro repudiandae optio dignissimos possimus
+        laudantium hic ab quas, vel quam quod voluptatem autem omnis, molestiae natus quo voluptates tempore alias aut,
+        aliquam deserunt architecto! Magni impedit facilis quam veniam itaque nesciunt, adipisci consectetur est alias
+        qui doloremque! Eos commodi laborum quas error, amet aut earum saepe ea doloremque. Iste, minima quia expedita
+        ipsum vitae nihil commodi ex est, qui voluptas, neque earum numquam quae ipsa. Ad, cumque? Odio possimus
+        accusantium tempora! Iste dolor, incidunt voluptas blanditiis maiores ducimus architecto consectetur fuga esse
+        necessitatibus voluptates repellat. Impedit perspiciatis ducimus esse vitae porro officiis maxime laboriosam,
+        earum aspernatur nesciunt nulla velit, distinctio itaque numquam quos natus vero accusantium. Quam error unde
+        magnam fuga ad beatae ut expedita necessitatibus accusantium odit reiciendis, libero incidunt officia architecto
+        accusamus porro molestiae cumque blanditiis? Consectetur rem esse error aut dolor nam iusto ea officiis aperiam
+        eos magnam ad modi, maxime expedita illum numquam ducimus, ipsa excepturi velit ipsum neque corporis dignissimos
+        rerum? Mollitia consectetur suscipit ut voluptatibus impedit nesciunt fugiat ad, quis nulla molestiae laboriosam
+        illum! Dolorem culpa ab iusto accusantium. Commodi quasi maiores velit impedit modi! Minima, vero! Inventore id
+        delectus facilis unde! Accusamus rerum magni illum saepe velit sit dicta quasi reiciendis ullam facere
+        repudiandae nam dolores veritatis eligendi molestiae inventore praesentium perspiciatis, eius explicabo
+        temporibus nihil et quisquam? Maiores harum facilis expedita autem voluptate nemo temporibus qui dicta possimus
+        ad error vero molestiae deserunt magni neque, dolorem distinctio eveniet assumenda quasi debitis tempora laborum
+        velit. Veniam dignissimos quo ducimus eaque blanditiis, sapiente laboriosam id, recusandae, amet similique aut
+        sunt. Officiis reiciendis ab quod nam corporis, voluptatum facere minus unde harum dolorum a libero autem,
+        sapiente ut tempora architecto ipsa assumenda! Temporibus illo commodi ducimus! Veritatis ipsa itaque cumque
+        molestias at voluptate iure odit vero illo officiis doloribus, quia, porro ullam sequi autem? Vero dignissimos
+        vel nihil molestiae doloremque id mollitia aperiam ducimus ipsum deserunt. Delectus corporis adipisci impedit
+        aperiam necessitatibus ipsa repellat repellendus, labore dicta dolore mollitia fugit, assumenda incidunt
+        cupiditate, deserunt maxime? Nulla, perferendis aliquid pariatur nihil voluptas quia dolore impedit eaque minus
+        nisi est suscipit deserunt dolores rem obcaecati sint omnis alias nobis velit quod maiores laudantium assumenda
+        earum esse? Aspernatur ab debitis commodi dolor? Praesentium reiciendis exercitationem dolorum quos harum?
+        Recusandae aliquid quis ut eum quaerat! Deleniti officiis laboriosam pariatur quam ab dolore delectus
+        perspiciatis nemo consequatur facere suscipit, voluptatibus repellat non veritatis, quas assumenda itaque
+        dignissimos. Corporis ut dolores voluptatum at voluptates molestias pariatur et atque ipsa aspernatur quas,
+        quibusdam quia, accusantium molestiae placeat sed dolorum asperiores totam ad blanditiis nisi nobis laudantium
+        impedit voluptatibus. Iste repellendus veniam expedita quos hic maiores sit rerum officia a, dignissimos
+        explicabo molestias fugiat? Voluptatibus sint a numquam, eligendi et odio excepturi ratione ullam quibusdam
+        voluptatem, ipsa odit aut quod dolore doloribus natus dolorum, sapiente tempore. Adipisci itaque autem, impedit
+        eos quasi, quis aut quos ut blanditiis recusandae, nostrum iusto atque voluptates vitae voluptatibus qui? Magni
+        voluptatibus inventore provident voluptatum, eligendi quos maiores veritatis sequi, facere cumque adipisci!
+        Consequatur incidunt soluta quibusdam iste consectetur beatae in, natus deleniti illo est officiis cumque quia
+        adipisci dignissimos vitae quas? Officiis maxime, consequatur rerum sunt id odit aperiam obcaecati doloremque
+        dolorem possimus ipsum optio blanditiis laborum quaerat magni cum a sapiente quam laudantium veniam modi
+        corrupti sequi rem debitis. Repellendus laborum et consequatur esse laudantium error beatae reiciendis ipsam,
+        dolorem atque aliquid sed ygygd geueuhj hwgwed hgwyegyuw yuwte fe ygeywge hwgeywe e wygeuwge wegwuy w e
+        wyeqwyeuw wgewge wee w 7e7te t wwioqhuqwiw hwgeyqhsqdyyfga d fgedueiy w ee eqyeywgd dueguewh.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo eveniet dolor corrupti, exercitationem dicta quae
+        quo rerum, placeat eos cum voluptates sint, veritatis debitis veniam voluptatem. Dolore dolor earum aspernatur
+        ipsum nisi magni saepe odit voluptas doloribus dolores blanditiis architecto delectus nihil ea quisquam ipsa
+        nulla veritatis ullam, dolorum magnam ab laboriosam. Temporibus aut officia consectetur vel unde recusandae
+        consequuntur. Unde amet laudantium quidem consequuntur at molestias perferendis aliquid velit dolor possimus
+        iusto assumenda in praesentium, consectetur laboriosam. Iste impedit soluta iusto nulla, quas quis pariatur
+        quisquam! Sequi, placeat quidem quas iusto officiis nobis minus soluta porro sapiente illum expedita culpa magni
+        numquam sint earum eveniet quo odio dolore ratione consectetur? Omnis dolore necessitatibus atque excepturi
+        asperiores pariatur, nihil ex in, nisi nulla esse? Architecto eveniet nulla excepturi quia deleniti incidunt ab
+        ipsum, aliquam magnam a. Maxime minus, cum dolorem officia aperiam reprehenderit laboriosam quae aut eligendi
+        quidem accusamus facilis cupiditate ipsam fugiat voluptatem rerum, cumque odio, natus obcaecati sit incidunt?
+        
+    </div>
+    <div class="mycont">
+        I m another conainer.
+    </div>
+</body>
+
+</html>
