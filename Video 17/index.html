@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Specificity decides which CSS rule wins when multiple rules target the same element.
+
+Priority (low → high):
+
+element < class < id < inline
+
+Example:
+
+<p id="text" class="para">Hello</p> */
+        /* p { color: blue; }          element */
+        /* .para { color: green; }     class */
+        /* #text { color: red; }       id */
+        /* 
+👉 Final color = red, because ID has higher specificity.
+
+Easy order:
+Element < Class < ID < Inline */
+
+        /* so here it will show "burlywood" this color of cpurple because firstly class has high priority so it can be .yellow or .cred or .purple but it is only apply on .cpurple because ye sbse neeche h or ya end m hai not applying on h1
+....because h1 is element and class selector has high specificity than element selector..  */
+        .yellow {
+            color: yellow;
+        }
+
+        .cred {
+            color: blueviolet;
+        }
+
+        .cpurple {
+            color: burlywood;
+        }
+
+        h1 {
+            color: red;
+        }
+
+        /* inline css has higher priority menas if u see any css directly with style tag dont think too much this style tag css has high pripority will aplly see exmaple.. */
+        /* Inline CSS means CSS written directly inside the HTML element using the style attribute.
+
+Example:
+<h1 style="color: red;">Hello</h1>
+
+Here, color: red is inline CSS.
+
+CSS Specificity order (high → low):
+
+Inline > ID > Class > Element
+
+Example:
+
+<h1 id="title" class="blue" style="color: red;">Hello</h1>
+#title { color: blue; }
+.blue { color: green; }
+h1 { color: yellow; }
+
+✅ Red will apply because inline CSS has higher specificity. */
+
+        /* 
+Specificity order:
+
+Inline > ID > Class / Attribute / Pseudo-class > Element >universal selector  */
+        /* attributes */
+
+        /* <div>
+        <!-- here data-x="a" this is attribute  -->
+        <h1 class="yellow cred cpurple" data-x="a">CSS Specificity</h1>
+    </div> */
+
+        /*    .yellow{
+            color: yellow;
+        }
+        .cred{
+            color: blueviolet;
+        }
+        .cpurple{
+            color: burlywood;
+        }
+           h1{
+            color: red;
+        }
+         so here this attribute red color will apply.. because classes and attributes ahve same priority so jp selector end m aa rha h vo aplly hoga so here ye data-x=a vala apply hoga..
+            [data-x=a]{
+            color:red;
+            } */
+
+        /* Specificity Calculation
+To calculate specificity, assign a value to each part of the selector:
+
+Universal Selector: 0
+Element selectors and pseudo-elements: 1
+Class selectors, attribute selectors, and pseudo-classes: 10
+ID selectors: 100
+Inline styles: 1000
+Then, add up the values of all the parts in the selector.
+
+Here is an example:
+
+<h1 id="title" class="h1">CodeWithHarry</h1>
+
+Here, the specificity value will be 111 because ID has a specificity of 100, the class has a specificity of 10, and the h1 element has a specificity of 1 so class has high specificity.
+
+In the case of a specificity tie, the rule that appears last in the CSS is applied. */
+
+/* complex specificiity_>we add  */
+/* exmaple */
+/* h1 means 1 and .yellow class means 10 so 10+1=11 has high specificity so this will apply */
+h1.yellow{
+    color: blue;
+}
+
+
+        /* Importance
+The !important flag in CSS is used to give a particular style rule the highest level of importance, overriding any other competing styles. When you add !important to a CSS rule, it will take precedence over other rules affecting the same element, regardless of their specificity. For example, if you have:
+
+p {
+  color: red !important;
+}
+ 
+p {
+  color: blue;
+}
+
+The text in the <p> element will be red, not blue, because the !important flag makes that rule more important.
+
+An !important at the end of a CSS value gets a specificity score of 10,000 points. This is the highest specificity that one individual item can get.
+
+However, it's generally best to use !important sparingly, as it can make debugging and maintaining your stylesheets more complicated. It can override styles in ways that are hard to trace, leading to unexpected results.
+
+ */
+ 
+ /*  Quick Quiz
+What will be the specificity value of the following selector:
+
+a.harryclass.rohan-class[href]:hover {
+  color: red;
+}
+
+Solution
+To calculate the specificity value of the selector a.harryclass.rohan-class[href]:hover, you can break down its components:
+
+Element selectors: a contributes 1 point.
+Class selectors: .harryclass and .rohan-class each contribute 10 points, totaling 20 points.
+Attribute selector: [href] contributes 10 points.
+Pseudo-class: :hover adds another 10 points.
+Add up all these values:
+
+1 (element) + 20 (classes) + 10 (attribute) + 10 (pseudo-class) = 41.*/
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 class="yellow cred cpurple">CSS Specificity</h1>
+
+    </div>
+</body>
+
+</html>
