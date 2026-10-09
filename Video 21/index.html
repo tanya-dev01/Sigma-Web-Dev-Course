@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Lists</title>
+    <style>
+        /* nav ke andar ul ke andar jo li h uski list style none krdo means jo bindi aa rhi thi unordered list ki vjh se jo gol bindi aa rhi thi use hta do */
+        nav ul li{
+            /* list-style: none; */
+            /* by devanagari it shows like old style 1 2 3 see  */
+            list-style: devanagari;
+            /* can set emoji at place of devanagari counting */
+            list-style-type:"❤️";
+            /* when i do background color yellow so color will not seen in counting devanagari 1 2 3 it means marker means list style bhar h */
+            background-color: yellow;
+            /* by doing   list-style-position: inside; the no like 1 2 3 in devanagari seen in color..means list style position means list ki style ki position ko inside andar le jao */
+            list-style-position: inside;
+            /* now after list style position border pure p aayega counting p bhi */
+            border: 2px solid black;
+            /* it set image before home about conatct.. */
+            /* list-style-image: url(https://www.sakshi.com/gallery_images/2023/06/4/Cricketer%20Shubman%20Gill%20Unseen%20Photos_1.jpg)\
+            
+             */
+             /* here i can do all three things together like first is list style type which is disc second list styele position which is inside and third list style image which is url of shubby grom google */
+             /* hm ek bar m ek hi chijnrkh skte h agr disc h to url nhi hoga kyuki disc h to bindi hngi bha t image ki kya jaroort or agr url h to disc ni hoga kyuki fir bindi ki ky jaroorat if image h to but for example here i have write all three things just for understanding */
+             /* list-style: disc inside  url(https://www.sakshi.com/gallery_images/2023/06/4/Cricketer%20Shubman%20Gill%20Unseen%20Photos_1.jpg); */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+</body>
+</html>
