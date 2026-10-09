@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Display Property</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+.box{
+    border:2px solid black;
+    /* by doing display inline i m a box which is block element become inline see it by commenting display :inline; */
+    /* display: inline; */
+
+      /* to fix this problem of space for padding and margin we use dispaly:inline-block;so it start giving space upar jo display h vo display:inline; h ab m use inline block kr rhi hu..for giving padding and margin from top side.. */
+    display: inline-block;
+    /* width will not work when display is inoine it will only work if display change like inline-block see it by doing display:inline; and width:344px; by commenting display :inline-block; and then again see it by commenting display:inline-block; and width=344px; */
+    width: 344px;;
+
+    /* yha padding dene pr upar se padding nhi aa rhi because if element is inline so padding upar se nhi ati h see after run */
+    /* padding is box k andar k text or content k charo trf space */
+    padding: 45px;
+    /* same for margin ye bhi upar se nhi lagegi see by commenting both padding and margin and then uncommenting one by one */
+    /* margin is box ke bhar vali space  */
+    margin: 34px;
+    /* to fix this problem of space for padding and margin we use dispaly:inline-block;so it start giving space upar jo display h vo display:inline; h ab m use inline block kr rhi hu..for giving padding and margin from top side.. */
+}
+.box1{
+    /* by doing dispaly none i m a box vali chij gayab ho jayegi */
+    /* display: none; */
+    /* by doing visibility hiden box gayab ho jayega bs uski space rh jayegi see it by doing only visibility hiden and commenting display none.. */
+    /* visibility: hidden; */
+}
+    </style>
+</head>
+<body>
+    <!-- Css Display property means as div is block element we can convet it to inline element -->
+   <div class="box box1">
+    i m a box
+   </div> 
+   <div class="box">also a nice box</div>
+   <!-- here span is a inline element so i m a good girl eke hi line m aayega.. -->
+   <span>I m a good</span>
+   <span>girl</span>
+</body>
+</html>
