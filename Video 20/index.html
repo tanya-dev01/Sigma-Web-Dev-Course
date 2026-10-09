@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* *{
+            margin: 0px;
+            padding: 0px;
+        } */
+        .box{
+            border: 2px solid rgb(16, 10, 10);
+            padding: 34px;
+            /* Box-shadow adds a shadow around an element. */
+              box-shadow: 5px 15px 5px rgb(70, 59, 59);
+/* 5px → Horizontal shadow
+
+15px → Vertical shadow
+
+5px → Blur
+
+gray → Shadow color
+
+Example: A box looks slightly raised from the page because of its shadow. */
+
+
+
+        }
+        /* text shadow is same as box shadow.. */
+        .text-element{
+            text-shadow: 2px 2px 4px rgb(188, 70, 70);
+            /* Outline is a line drawn outside an element's border.
+
+.box {
+    border: 2px solid red;
+    outline: 3px solid blue;
+}
+Difference between Border and Outline:
+Border:Around the element's content and padding
+Outline:Outside the border
+Border:Takes up space in the layout
+Outline:Does not take up layout space
+Border:Can set each side separately
+Outline:Cannot set each side separately
+
+Easy to remember: Border is the inner line; outline is the outer line. */
+            /* outline is same as border only some difference */
+            outline:2px solid black ;
+            /* yha border andar aayega green wala and outline bahar hogi black wali */
+            border:2px solid rgb(45, 172, 16) ;
+            /* we can increase or decrease outlline offset through inspect element but we cant do it with border */
+            outline-offset:10px ;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        I m a box.
+    </div>
+    <p class="text-element">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem error eius repellat? Provident recusandae adipisci possimus molestias laboriosam! Exercitationem, deserunt. Autem veniam culpa possimus ut vero perferendis, fugit molestias voluptatem aliquam consequuntur? Exercitationem, mollitia.
+    </p>
+</body>
+</html>
