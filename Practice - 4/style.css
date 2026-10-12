@@ -1,0 +1,123 @@
+    /* <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet"> -->
+    */
+    /* Instead of repeating box-sizing: border-box in many selectors, put it in the universal selector: */
+     * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: blanchedalmond;
+            margin: 12px;
+            padding: 12px;
+            border: 2px solid black;
+            /* box-sizing: border-box; */
+
+
+            /* font-family: "Baloo Bhaijaan 2", sans-serif; */
+
+        }
+
+        ol li {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 12px;
+            padding: 2px;
+            background-color: rgb(232, 210, 232);
+            list-style-position: inside;
+            border: 2px solid black;
+            /* box-sizing: border-box; */
+            
+
+        }
+
+        ul li {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 12px;
+            padding: 2px;
+            background-color: rgb(232, 210, 232);
+            list-style-position: inside;
+            border: 2px solid black;
+            /* box-sizing: border-box; */
+
+        }
+
+        .red1 {
+                  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: rgb(87, 164, 200);
+            margin: 12px;
+            padding: 12px;
+            border: 2px solid black;
+            max-width: 100vw;
+            /* box-sizing: border-box; */
+            font-size: 18px;
+           
+        }
+
+        .about {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 12px;
+            padding: 12px;
+            background-color: rgb(232, 210, 232);
+            border: 2px solid black;
+            text-align: center;
+            /* box-sizing: border-box; */
+
+        }
+
+        #female {
+
+            margin: 12px;
+            padding: 2px;
+        }
+
+        #male {
+
+            margin: 12px;
+            padding: 2px;
+        }
+        #nationality{
+               font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 12px ;
+            padding: 1px;
+            background-color: rgb(232, 210, 232);
+            border: 2px solid black;
+            
+            /* box-sizing: border-box; */
+        }
+
+        .gender {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 12px;
+            padding: 4px;
+            background-color: rgb(232, 210, 232);
+            border: 2px solid black;
+            /* box-sizing: border-box; */
+            font-size: 15px;
+        }
+
+        td,th {
+                        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            border: 2px solid black;
+            margin: 12px;
+            padding: 4px;
+            /* box-sizing: border-box; */
+            background-color: rgb(232, 210, 232);
+        }
+
+       
+        .quote p{
+                           font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            border: 2px solid black;
+            margin: 12px;
+            padding: 4px;
+            /* box-sizing: border-box; */
+            background-color: rgb(232, 210, 232);
+            font-weight: bolder;
+        }
