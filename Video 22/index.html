@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS overflow controls what happens when content is too big to fit inside a box. simply when we put content bigger than box so it will overflow -->
+     <!-- in css only four type of overflow
+      - overflow: visible; — Extra content can show outside the element. (Default)
+- overflow: hidden; — Extra content outside the element is hidden.
+- overflow: scroll; — Adds scrolling to access overflowing content.
+- overflow: auto; — Adds scrolling only when needed. -->
+    <title> CSS overflow</title>
+    <style>
+               .box{
+            /* Yes! ✅ Exactly! 40vw means 40% of your browser's viewport width (the visible webpage area), not necessarily 40% of your entire laptop screen.
+
+Why use vw instead of px?
+
+px → fixed size. Example: width: 400px;
+
+vw → size changes with the viewport width. Example: width: 40vw;
+
+Example: If your viewport is 1000px wide:
+
+width: 400px → always 400px wide.
+
+width: 40vw → 400px wide.
+
+If you resize the browser to 800px:
+
+400px → still 400px.
+
+40vw → becomes 320px.
+
+Remember: Use vw for responsive sizing and px when you want a specific size. */
+/* we use vh and vw for responsive jisse hn laptop sb m acchi dikhe */
+           width: 40vw; 
+           height: 10vh;
+           border: 2px solid black;
+           /* after writing these width is 40vw and height is 10 vh and border u see it is overfloeing so how to solve this issue so i use "overflow" property */
+           /* overflow scoll helps in scoll content besak sara content ese hi dikh rha h bada nhi h fir bhi scroll dikhaega */
+           /* overflow: scroll; */
+           /* overflow auto say that agr ye overflow kr rha h to apneaap scrollbar dikha dega or agr nhi kr rha h mtlb content jada nhi h to scrollbar ki koi jaroorat nhi h */
+           overflow: auto;
+           /* nowrap se ye horizontally puri space legi ek line m pura content aa jayega see by uncommenting vertically niche text nhi dikhaegi or horizontally scrollbar aa jayega.. */
+           white-space: nowrap;
+           /* ellipse krne se dot dikh jayega ese  ...  see after run */
+           text-overflow: ellipsis;
+        }
+ 
+        /* see by coomenting or by copy delete and paste because comment shi nhi ho rha h.. second means this box what happens and then commenting first box and seee what happen in second.. */
+        /* here in niche wala i copy box because i seeit by commenting whitespace and text overflow by commenting */
+        .box{
+            /* Yes! ✅ Exactly! 40vw means 40% of your browser's viewport width (the visible webpage area), not necessarily 40% of your entire laptop screen.
+
+Why use vw instead of px?
+
+px → fixed size. Example: width: 400px;
+
+vw → size changes with the viewport width. Example: width: 40vw;
+
+Example: If your viewport is 1000px wide:
+
+width: 400px → always 400px wide.
+
+width: 40vw → 400px wide.
+
+If you resize the browser to 800px:
+
+400px → still 400px.
+
+40vw → becomes 320px.
+
+Remember: Use vw for responsive sizing and px when you want a specific size. */
+/* we use vh and vw for responsive jisse hn laptop sb m acchi dikhe */
+           width: 20vw; 
+           height: 10vh;
+           border: 2px solid black;
+           /* after writing these width is 40vw and height is 10 vh and border u see it is overfloeing so how to solve this issue so i use "overflow" property */
+           /* overflow scoll helps in scoll content besak sara content ese hi dikh rha h bada nhi h fir bhi scroll dikhaega */
+           /* overflow: scroll; */
+           /* overflow auto say that agr ye overflow kr rha h to apneaap scrollbar dikha dega or agr nhi kr rha h mtlb content jada nhi h to scrollbar ki koi jaroorat nhi h */
+           overflow: auto;
+           /* nowrap se ye horizontally puri space legi ek line m pura content aa jayega see by uncommenting vertically niche text nhi dikhaegi or horizontally scrollbar aa jayega.. */
+           /* white-space: nowrap; */
+           /* ellipse krne se dot dikh jayega ese  ...  see after run */
+           /* text-overflow: ellipsis; */
+           /* it means if overflow x axis m kre to hidden krdo if overflow y axis m kre to scroll krdo */
+           overflow-x:hidden ;
+           overflow-y: scroll;
+           /* we have one more way which is more good in which instead of writing them differentyly here see
+             overflow: auto;
+             overflow-x:hidden ;
+           overflow-y: scroll; see y commenting these three line only kee one line see down..
+           i can write like this see down
+           overflow:hidden auto
+           it means x axis m hidden and y m auto menans scrollbar only seen when needed in y means if only overfloe;
+              */
+               overflow:hidden auto
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        i m a good girl and i love Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis enim neque quos! Provident culpa eum ab excepturi fugiat quibusdam labore, nihil, inventore voluptatibus recusandae obcaecati dignissimos ipsa atque consectetur magni suscipit beatae nam temporibus illum veniam vitae dolor dolore! Atque in aperiam quidem accusamus repellat.
+    </div>
+</body>
+</html>
