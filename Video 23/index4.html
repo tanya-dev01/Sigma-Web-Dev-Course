@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Position-sticky position</title>
+    <style>
+        /* position in css in every small with ex
+CSS has 5 main position values. Here is each one in simple words with a small example.
+
+1. position: static;
+Default position of every element.
+
+top, left, right, and bottom have no effect.
+
+.box {
+  position: static;
+  top: 20px; /* No effect 
+}
+
+2. position: relative;
+Element stays in its normal position flow.
+
+You can move it relative to its original position.
+
+.box {
+  position: relative;
+  top: 20px;
+  left: 10px;
+}
+
+The box moves 20px down and 10px right.
+
+3. position: absolute;
+Element is removed from normal flow.
+
+Positioned relative to its nearest positioned ancestor (one whose position is not static), or the initial containing block if none exists.
+
+.parent {
+  position: relative;
+}
+
+.box {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+The box appears at the parent's top-right corner.
+
+4. position: fixed;
+- Element stays in the same place relative to the browser viewport, even while scrolling.
+
+.box {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+Example: a floating help button at the bottom-right of the screen.
+
+5. position: sticky;
+- Element behaves normally until you scroll to a specified point, then sticks in place within its scrolling container.
+
+h2 {
+  position: sticky;
+  top: 0;
+}
+
+Example: a heading that sticks to the top while you scroll.
+
+Quick revision
+Position
+
+Easy meaning
+
+static
+
+Normal position
+
+relative
+
+Moves from its original position
+
+absolute
+
+Positioned relative to a containing block
+
+fixed
+
+Stays fixed on the viewport
+
+sticky
+
+Scrolls, then sticks
+
+Memory trick: Static = normal, Relative = original position se move, Absolute = positioned independently, Fixed = stays on screen, Sticky = sticks while scrolling.
+
+ /*
+
+        /* position: static; is the "default" position or it is a default property of every HTML element.
+- Elements appear in the normal order of the page.
+- top, left, right, and bottom don't affect its position.
+Example
+<div class="box">Hello World</div>
+
+
+.box {
+    position: static;
+    top: 50px;
+    left: 100px;
+    background-color: yellow;
+}
+
+
+Output: The yellow box stays in its normal position. top: 50px and left: 100px have no effect because its position is static.
+Remember: static = normal position, no movement using top, left, right, or bottom. */
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+    .box {
+            height: 423px;
+            width: 80vw;
+            padding: 3px;
+            margin: 3px;
+            border: 2px solid black;
+
+        }
+        /* important-->>>used in NAVBAR... */
+        /* so ye upar chiapk jayega when i scoll */
+
+        .box1 {
+position: sticky;
+top: 0px;
+height: 111px;
+width: 100%;
+margin: 0;
+padding: 0;
+
+            background-color: rgb(29, 61, 89);
+
+
+        }
+
+        .box2 {
+            background-color: rgb(3, 85, 30);
+
+
+
+
+
+        }
+
+
+
+        .box3 {
+            background-color: aqua;
+        
+        }
+
+        .box4 {
+            background-color: cornflowerblue;
+        }
+
+    
+
+        .parentbox {
+
+            padding: 34px;
+            margin: 43px;
+            border: 3px solid purple;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- i can box class to all because agr m sare elements pr ek sath  kuch krna chahti hu so box se if only first box pr so by box1 i will add css-->
+    <div class="parentbox">
+
+        <div class="box box1">box1</div>
+        <div class="box box2">box2</div>
+        <div class="box box3">box3</div>
+        <div class="box box4">box4</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Position</title>
+    <style>
+        /* position in css in every small with ex
+CSS has 5 main position values. Here is each one in simple words with a small example.
+
+1. position: static;
+Default position of every element.
+
+top, left, right, and bottom have no effect.
+
+.box {
+  position: static;
+  top: 20px; /* No effect 
+}
+
+2. position: relative;
+Element stays in its normal position flow.
+
+You can move it relative to its original position.
+
+.box {
+  position: relative;
+  top: 20px;
+  left: 10px;
+}
+
+The box moves 20px down and 10px right.
+
+3. position: absolute;
+Element is removed from normal flow.
+
+Positioned relative to its nearest positioned ancestor (one whose position is not static), or the initial containing block if none exists.
+
+.parent {
+  position: relative;
+}
+
+.box {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+The box appears at the parent's top-right corner.
+
+4. position: fixed;
+- Element stays in the same place relative to the browser viewport, even while scrolling.
+
+.box {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+Example: a floating help button at the bottom-right of the screen.
+
+5. position: sticky;
+- Element behaves normally until you scroll to a specified point, then sticks in place within its scrolling container.
+
+h2 {
+  position: sticky;
+  top: 0;
+}
+
+Example: a heading that sticks to the top while you scroll.
+
+Quick revision
+Position
+
+Easy meaning
+
+static
+
+Normal position
+
+relative
+
+Moves from its original position
+
+absolute
+
+Positioned relative to a containing block
+
+fixed
+
+Stays fixed on the viewport
+
+sticky
+
+Scrolls, then sticks
+
+Memory trick: Static = normal, Relative = original position se move, Absolute = positioned independently, Fixed = stays on screen, Sticky = sticks while scrolling.
+
+ /*
+
+        /* position: static; is the "default" position or it is a default property of every HTML element.
+- Elements appear in the normal order of the page.
+- top, left, right, and bottom don't affect its position.
+Example
+<div class="box">Hello World</div>
+
+
+.box {
+    position: static;
+    top: 50px;
+    left: 100px;
+    background-color: yellow;
+}
+
+
+Output: The yellow box stays in its normal position. top: 50px and left: 100px have no effect because its position is static.
+Remember: static = normal position, no movement using top, left, right, or bottom. */
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+    
+/* z-index with ex very short
+z-index in CSS decides which element appears in front when elements overlap.
+
+.box1 {
+    position: absolute;
+    z-index: 1;
+}
+
+.box2 {
+    position: absolute;
+    z-index: 2;
+}
+
+Example: If Box 1 and Box 2 overlap, Box 2 appears in front because its z-index is higher.
+
+Remember: Higher z-index = on top.
+
+*/
+/* by doing this u will see box1 niche h box 2 upar h see by commeniting niche wala box1 and box2 or delet again paste */
+
+.box1{
+   
+    background-color: rgb(29, 61, 89);
+  
+    
+}
+.box2{
+    background-color: rgb(3, 85, 30);
+    /* when i give position relative and top 3 px then u will see box two now can move from top to 3px if u increase it vo chlta jayega or niche wala boxes p chad jayega see by increaing top */
+    position: relative;
+    /* abhi mene top -45px kr diya h 3 px se */
+    top: -45px;
+    /* it move 34px by left */
+    left: 24px;
+   
+   
+    
+}
+
+     /* but if i want ki box 2 niche chla jaye box 1 ke then i will use z-index */
+        /* importantttttt...if in box 1 i will write z-index before writing position  it will not work because we know by default position static hoti h so usme direct top down left right -index direct work nhi krta pehle position change kro then -index will work;
+        look down if it is like this not work.. */
+           /* .box1{
+            background-color: rgb(29, 61, 89);
+z-index=1;
+    } */
+           .box1{
+            position: relative;
+            background-color: rgb(29, 61, 89);
+z-index: 1;
+    }
+
+.box2{
+    background-color: rgb(3, 85, 30);
+    /* when i give position relative and top 3 px then u will see box two now can move from top to 3px if u increase it vo chlta jayega or niche wala boxes p chad jayega see by increaing top */
+    position: relative;
+    /* abhi mene top -45px kr diya h 3 px se */
+    top: -45px;
+    /* it move 34px by left */
+    left: 24px;
+   
+   
+    
+}
+        .box3{
+            background-color: aqua;
+        }
+        .box4{
+            background-color: cornflowerblue;
+        }
+        .box{
+            height: 123px;
+            width: 80vw ;
+            padding: 3px;
+            margin: 3px;
+            border: 2px solid black;
+        
+        }
+        .parentbox{
+            padding: 34px;
+            margin: 43px;
+       border: 3px solid purple;
+        }
+
+        </style>
+</head>
+<body>
+    <!-- i can box class to all because agr m sare elements pr ek sath  kuch krna chahti hu so box se if only first box pr so by box1 i will add css-->
+     <div class="parentbox">
+
+         <div class="box box1">box1</div>
+         <div class="box box2">box2</div>
+         <div class="box box3">box3</div>
+         <div class="box box4">box4</div>
+     </div>
+</body>
+</html>
