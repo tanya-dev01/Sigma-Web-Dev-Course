@@ -1,0 +1,147 @@
+<!-- This is Harry's Code.. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Card Design</title>
+
+    <!-- Remember Trick for both margin and padding:
+- padding: 8px; → All four sides = 8px
+- padding: 8px 13px; → Top/Bottom = 8px, Left/Right = 13px
+- padding: 8px 13px 5px; → Top = 8px, Left/Right = 13px, Bottom = 5px
+- padding: 8px 13px 5px 10px; → Top, Right, Bottom, Left (TRBL) -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: gray;
+            padding: 45px;
+        }
+
+        .card {
+            background-color: white;
+            width: 240px;
+            /* height: 450px; */
+            /* if i dont give height to card y fir bhi shi se adjust kr lega may be i can give padding to it se by commenting padding and keeping heright then commnting height keeping padding */
+            /* padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 34px;
+    padding-left: 0px; */
+            padding: 0px 0px 34px 0px;
+            /* border radius means side se golkar hona card ka.. */
+            border-radius: 3px;
+        }
+
+        .image {
+            /* how i decide ki padding 5px */
+            /* Calculation: 240 − 230 = 188px is of img.10px left over. That space is shared on both sides, so you get 5px on the left and 5px on the right. */
+            padding: 5px;
+        }
+
+        .image img {
+            border-radius: 7px;
+        }
+
+        .content {
+            /* padding-top: 8px;
+    padding-right: 13px;
+    padding-bottom: 8px;
+    padding-left: 13px; */
+            padding: 8px 13px;
+            font-family: "Open Sans", sans-serif;
+
+
+        }
+
+        .content p {
+            font-family: "Open Sans", sans-serif;
+            font-size: 10px;
+            color: grey;
+        }
+
+        .capsule {
+            /* padding see by inspect konsi wali h */
+            /* padding-top: 0px;
+    padding-right: 28px;
+    padding-bottom: 0px;
+    padding-left: 14px; */
+            padding: 0 28px 0 14px;
+        }
+
+        .capsule span {
+            border: 1px solid rgb(161, 152, 152);
+            /*     padding-top: 0px;
+    padding-right: 6px;
+    padding-bottom: 0px;
+    padding-left: 6px;
+ */
+            padding: 0px 6px;
+            border-radius: 7px;
+            font-size: 9px;
+            font-family: "Open Sans", sans-serif;
+
+        }
+
+        .button {
+            text-align: center;
+            font-family: "Open Sans", sans-serif;
+
+
+        }
+
+        .button button {
+            /*     padding-top: 7px;
+    padding-right: 9px;
+    padding-bottom: 7px;
+    padding-left: 9px;
+ */
+            padding: 7px 9px;
+            border: none;
+            border-radius: 15px;
+            background-color: rgb(114, 180, 231);
+            color: blue;
+            font-size: 12px;
+            margin-top: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .button button:hover {
+            background-color: rgb(114, 180, 231);
+            color: rgb(8, 180, 237);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="image">
+            <img width="230px" src="images.jpg" alt="">
+        </div>
+        <div class="capsule">
+            <!-- i use span so they remain inline -->
+            <span>Nature</span>
+            <span>Lake</span>
+        </div>
+        <div class="content">
+            <h2>Shubman</h2>
+            <p>
+                Shubman Gill is loved for his elegant batting and his charming, boyish looks. His smile and calm
+                confidence make him a fan favourite.His clean-cut look, bright smile and calm, confident expression have
+                made him a favourite among young fans.
+            </p>
+        </div>
+        <div class="button">
+            <button>Read More</button>
+        </div>
+    </div>
+</body>
+
+</html>
