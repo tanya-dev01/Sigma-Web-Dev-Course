@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variables</title>
+    <style>
+        /* first saw it by commeting root by only keeping the background color simply jo m pehle rkhti thu then saw then uncommting root and saw by root what happens.. */
+        /* :root is used to create CSS variables that can be reused anywhere in CSS.
+
+:root {
+    --color:blue;
+            --seccolor:rgb(166, 166, 232);
+}
+
+--color = a variable name storing blue.
+
+--seccolor = a second variable name storing light blue.. (sec means secondary).
+
+var(--color) = uses the stored blue color.
+
+Example:
+
+.nav {
+    background-color: var(--color);
+}
+
+Benefit: Change the color in one place, and it updates everywhere that variable is used. */
+/* mene root m global variable bna liya..agr y color 100 bar bhi puri website m change hora h to mujhe bar bar krne ki jaroorat nhi h */
+        :root{
+            /* primary color */
+            --color:rgb(227, 56, 178);
+            /* secondary color */
+            --seccolor:rgb(166, 166, 232);
+            /* for padding */
+            --defpad:23px;
+            /* for opacity bloor krne k liye */
+            --defop:0.5;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+.nav{
+    /* pehle ye simple esa tha  */
+    /* background-color: rgb(53, 233, 17); */
+    /* now i change it by this ..u can see it by commeting background-color: rgb(53, 233, 17); and then commeting niche wala..which uses var(--color);  */
+    /* when i use --color and --secolor i have to chnange it by using var(--color) and var(--secolor) */
+    background-color: var(--color);
+
+}
+ul{
+    /* become horixontal home about conatct see by commeting it how it looking before display flex */
+    display: flex;
+}
+ul li{
+    list-style: none;
+    /* opacity in CSS is used to control the transparency of an element.
+- opacity: 1; → fully visible
+- opacity: 0.5; → 50% transparent
+- opacity: 0; → completely invisible
+Example
+<div class="box">Hello World</div>
+
+
+.box {
+    background-color: blue;
+    color: white;
+    opacity: 0.5;
+}
+
+
+Here, the blue background and white text both become transparent.
+Remember: opacity values range from 0 to 1. */
+/* so it become fade.. */
+    /* opacity: 0.3; */
+    /* by root m dekho opacity likhi h */
+    opacity: var(--defop);
+
+    /* padding: 34px; */
+    /* by defpad i can give padding yha 23px lg gyi see by commeting this defpad padding and from root also comment and keep only normal padding thenagain check by keep defpad and comment normal  */
+    padding: var(--defpad);
+    /* i can also give border from it see by commeting it how it look before*/
+    border: 12px solid var(--seccolor);
+}
+/* maan lo ul li:first child (means maan lo ul li first child h) */
+ul li:first-child{
+    /* m chahti hu ki ye  background-color: var(--color);  color dark ho jaye means home vala list item dark ho jaye so i made local color variable  so m color ko change krke local variable bna skti hu
+     i copy  --color:blue; this from root sbs upar isme se  */
+     /*  :root{
+            /* primary color */
+            /* --color:blue;  */ 
+            /* secondary color */
+            /* --seccolor:rgb(166, 166, 232); */
+        /* }  */
+        /* i made local variable mans copy root color m s now i can change its color so only home ka color change hoga */
+         --color:rgb(236, 127, 4); 
+             background-color: var(--color); 
+    
+    
+}
+/* see by commeting or delte paste upar vala same css mene do bar likha h  ul li :first child and root upar vala fir home vala list item blue hoga..ye(  background-color: var(--color,blue);) jb hota h jb global variable root m na ho  */
+ul li:first-child{
+  
+         /* --color:rgb(236, 127, 4);  */
+            
+             /* important... */
+/* agr esa h /* background-color: var(--color,blue); */ 
+/*  background-color: var(--color,blue); ye jayega or color blue naam ka variable dudhega jo ki abhi root m h
+ */
+ /*   :root{
+            /* primary color */
+            /* y h */
+            /* --color:blue; */
+            /* secondary color */
+            /* --seccolor:rgb(166, 166, 232); */
+        /* }  */
+        /* but maaan lo root h hi nhi so ye fir nhi ilega so y kahga koi nhi m ise blue kr deta hu */
+    background-color: var(--color,blue);
+    
+}
+ul li:nth-child(2) {
+     --color:rgb(236, 4, 236); 
+             background-color: var(--color); /* About */
+}
+ul li:nth-child(3) {
+     --color:rgb(197, 236, 4); 
+             background-color: var(--color); /* About */
+}
+
+
+
+
+    .container{
+            /* pehle ye simple esa tha  */
+    /* background-color: rgb(53, 233, 17); */
+    /* now i change it by this ..u can see it by commeting  background-color: rgb(142, 225, 165); and then commeting niche wala..which uses var(--color);  */
+    /* when i use --color and --secolor i have to chnange it by using var(--color) and var(--secolor) */
+  /* background-color: rgb(142, 225, 165); */
+    background-color: var(--seccolor);
+    }
+
+
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+    <div class="container">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem fuga adipisci magni aliquid temporibus nam at ipsam corporis laudantium enim blanditiis est ab accusantium maxime, delectus, quas voluptatibus veniam voluptatem pariatur reiciendis saepe sunt! Neque eos quos tenetur quas eaque aliquid amet, odio eveniet id!
+    </div>
+</body>
+</html>
