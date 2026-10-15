@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Floats and Clear</title>
+    <style>
+        /* 1. float — Moves an element to the left or right, allowing text to wrap around it.
+img {
+  float: right;
+}
+
+
+Example: Text wraps around an image on its left side.
+2. clear — Prevents an element from sitting beside a floated element.
+p {
+  clear: both;
+}
+
+
+Example: The paragraph starts below floated elements on both sides.
+- clear: left; → Clears left floats.
+- clear: right; → Clears right floats.
+- clear: both; → Clears both left and right floats. */
+        .cards{
+border: 3px solid black;
+/* by dispaly flowroot it will not overflow from container which is cards hre becaus img is overflowing by commenting dispaly kesa tha then un commting kesa h */
+display: flow-root;
+        }
+        img{
+            /* by float left the content means paragraph and card 2 and card 3 jo likha h vo img ke right m aa jayega kyuki img left kki or float kregi*/
+            /* float: left; */
+            /* by right img come in right and contnt in left se by uncommting right and commenting lft*/
+            float: right;
+        }
+        .card{
+            border: 2px solid red;
+        }
+        /* see by commenting it  */
+        /* means big para */
+        .card:nth-child(2){
+background-color: aqua;
+/* cleqr right means jo para h uske side m koi bhi element float  nhi chahiye means kuch bhi float hora h us hatao or mujhe meri jgh dedo */
+/* see by commeting */
+clear: right;
+/* clear:both; */
+        }
+      
+    </style>
+</head>
+<body>
+
+    <div class="cards">
+        <!-- img is first child of cards -->
+        <img width="230px" src="https://cdn-imgix.headout.com/tour/19364/TOUR-IMAGE/a0f87f7e-434d-4c3c-9584-f7ee351d5f64-10432-dubai-img-worlds-of-adventure---uae-resident-offer-01.jpg?auto=compress%2Cformat&w=1069.6000000000001&h=687.6&q=90&ar=14%3A9&crop=faces&fit=crop" alt="" >
+        <!-- card is second child of parent means card -->
+        <div class="card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, recusandae eum. Consectetur tenetur excepturi accusamus ratione autem facere totam, distinctio  lorem 333
+                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum commodi facilis similique temporibus, explicabo voluptas dolores, reiciendis blanditiis omnis quas recusandae vitae amet, ea veritatis dicta! Aperiam quis officiis veritatis temporibus qui omnis doloribus praesentium maiores ex, ut sit. Veniam, molestiae ipsam, eius placeat aliquid explicabo blanditiis est reprehenderit dignissimos iure sint harum provident repudiandae quia unde, quam asperiores illum quisquam iusto! Cum vero libero repudiandae nam iusto est quasi possimus totam cupiditate vel veniam fugit itaque cumque minus ducimus nostrum quos placeat aperiam, beatae, molestiae quod incidunt eveniet distinctio quisquam. Magnam veniam molestias dolorum similique excepturi, vel natus sapiente blanditiis cum mollitia consequatur vero dicta, dolorem vitae magni, quaerat optio quas maiores ducimus. Quaerat quas in provident obcaecati aperiam nam non quibusdam, eum debitis esse placeat cumque rerum dicta dolorem harum. Quidem voluptas, veritatis soluta saepe maiores, excepturi facere iusto rerum fugit corporis rem dolore libero aliquid, culpa quam modi delectus ipsum qui dolorem accusamus ullam itaque? Illum et magnam soluta ratione animi, dolorum, neque odio in explicabo accusantium architecto ullam natus ad! Omnis repellendus corrupti id quos aliquam. Numquam corporis laudantium eos perferendis laboriosam deserunt iusto nisi fugit explicabo eligendi. Natus aliquid blanditiis delectus veniam error eaque non atque! Vero beatae, asperiores ipsum iusto a perspiciatis placeat quas odit dolores, quidem perferendis? Tempora accusantium nihil distinctio porro, reiciendis autem atque temporibus. Voluptatum obcaecati facere sint numquam nemo sunt eveniet perspiciatis odio. Magni cupiditate esse veritatis architecto necessitatibus quisquam tenetur dolorum sit nesciunt quasi. Magni ex dolorem provident similique, saepe et amet! Officiis, quisquam aliquam aut numquam vel accusamus exercitationem nihil asperiores voluptatem illo perspiciatis nisi possimus minima perferendis esse dicta rem natus odio, aliquid fugit in enim. Nisi inventore quis error? Est nobis, eaque deleniti reiciendis velit repudiandae ipsum consectetur? Tempore, beatae cum officiis omnis maiores nihil a dolor dolorem quibusdam ratione adipisci perspiciatis fugiat at ad, vel voluptas fuga consectetur. Dignissimos molestias quis, assumenda perferendis autem nam fuga saepe, amet omnis eligendi sequi! Molestiae, sint facilis ipsum nobis vel totam!beatae necessitatibus! Maxime?</p>
+        </div>
+        <div class="card">Card 2</div>
+        <div class="card">Card 3</div>
+    </div>
+</body>
+</html>
