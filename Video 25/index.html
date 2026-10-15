@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries</title>
+    <!-- Media queries are used to make a website responsive so that it looks good on mobile, tablet, and laptop screens. They apply different CSS styles depending on the screen size.
+Example:
+.box {
+    background-color: blue;
+}
+
+/* For mobile screens */
+@media only screen and (max-width: 600px) {
+    .box {
+        background-color: red;
+    }
+}
+
+
+
+
+Explanation:
+- @media — starts a media query.
+- max-width: 600px — applies the CSS when the screen width is 600px or less.
+min-width: 600px → applies when the screen width is 600px or more.
+- Above 600px — the box is blue.
+- At 600px or less — the box becomes red.
+Remember: Media queries help make websites responsive on different screen sizes. -->
+<style>
+    body{
+        background-color: red;
+    }
+    @media screen and (orientation: landscape){
+body{
+
+    border:2px solid  purple;
+}
+    }
+    /*  @media only screen means only screen k liy means phn laptop macbook etc yani screen k liye..e h we wrote media queries by @media */
+    /* means agr screen ki max width 455px h to body ka background color blue ho jayea.. */
+    
+    /* do inspect and use rsponsive vali chuij ko chota krte jao jese hi 455px hoga vo blue ho jayega go check */
+    /* mtlb 455px ya usse chote pr hi jo media k andar style likhe h vo lgenege agr usse bde hue to nhi lgega agr 456 bhi ho gya to color blue nhi hoga red ho jayega */
+    /* see by uncommeting it together max width this and just niche wala min width and commting all leavingg these two.. */
+    /* @media only screen and (max-width:455px){
+        body{
+            background-color: rgb(8, 0, 255);
+        }
+    } */
+    /* see by uncommeting it */
+    /* also for min width when 455 ho ya usse jada ho to hi dikhega ya km se km 455 tk hi dikhega usse km m nhi dikhega jada m dikhga 455 se*/
+    /* @media only screen and (min-width:455px){
+        body{
+            background-color: rgb(255, 247, 0);
+        } */
+        /* when i do screen choti by responsive they look in column and adjust themsellves.. */
+     
+    /* } */
+    @media only screen and (max-width:455px){
+        body{
+   background-color: rgb(8, 0, 255);
+        }
+        /* when i do screen choti by responsive they look in column and adjust themsellves.. */
+        .boxes{
+            flex-direction: column;
+        }
+    }
+    /* syntax od media queries */
+    /* @media not|only mediatype and (expressions) {
+    CSS-code (yha hum css code likhete h )
+ } */
+  .boxes{
+    display: flex;
+  }
+  .box{
+      width: 244px;
+    height: 244px;
+  background-color: aqua;
+  padding: 3px;
+margin: 3px;
+  }
+</style>
+</head>
+<body>
+    <div>
+        I m a beautiful girl!
+    </div>
+    <div class="boxes"> 
+         <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+</html>
