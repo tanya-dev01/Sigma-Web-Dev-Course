@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> More in CSS selectors</title>
+    <style>
+        /* see all by commeting and uncommeting */
+        /* see by commeting .box:first-line and    <div class="box">I m first box</div> and keeping lorem and after this se by uncommeting .box:first-child and commeting .box:first-child and    <div class="box">I m first box</div> */
+        /* .box:first-child means yadi .box apne parent yani boxes ka first child h to css uspe lg jaye */
+/* .box:first-child{
+background-color: red;
+} */
+ /* .box:first-line{
+    background-color: yellow;
+ } */
+  /* .boxes * means .boxes k sare element */
+  /* .boxes *{
+    background-color: blue;
+   border: 2px solid black;
+  } */
+  /* this is attribute selector in box 2 i add this data color */
+  /* [data-color="primary"]{ */
+    /* margin: 3px; */
+    /* margin-top: 3px;
+    padding-top: 23px;
+  } */
+  /* see by uncommeting and then commeting */
+  /* i can do grouping so mujhe alg alg na likhna pade */
+  /* it means sare p mein sare attribute m sare .box m and data m ye css lga do */
+  /* p,a,.box,[data-color="primary"]{ */
+    /* margin: 3px; */
+    /* margin-top: 3px;
+    padding-top: 23px;
+  } */
+ /* .box ka parent check karo, phir uske saare children count karo.
+   Jo even-numbered child (2nd, 4th, 6th...) ho aur jiske paas
+   .box class ho, uska background blue kar do. */
+/* .box:nth-child(even) {
+    background-color: blue;
+} */
+ /* niche se pehla */
+/* .box:nth-last-child(1){
+    background-color: rebeccapurple;
+} */
+ /* before and aftr are "pseudo elements not pseudo selectors" */
+ /* ye css ke through element ko dynamically insert kiya ja skta h */
+ /* so ye ek before element insert kr dega boxes k andar see by inspect in left side jha html hoti h element upar section m before likha hoga ye main content se pehle likha hoga means jo i m a box para vgera se pehle just boxes ka baad*/
+ .boxes::before{
+    content: "Shubyy is too much handsome";
+    color: chartreuse;
+ }
+ /* it will insert after main content jo boxes vgera h uske baad as before insert before main contnt */
+ .boxes::after{
+    content: "Rohit is too much handsome";
+    color: aqua;
+ }
+ /* ye jb m content jo main ko usko slect krungi jese puri line so select krt h to color ye dikhaega and if i writ only like this ::selection{
+ color:bluevoilet;
+ } not add .boxes so ye before aftr and main content sb m ye color dikhaega when i will select them */
+ .boxes::selection{
+color: blueviolet;
+background-color: black;
+ }
+ /* main content ke element m first letter ye ho jayega */
+ .box::first-letter{
+    color: peru;
+    font-size: 34px;
+ }
+ input::placeholder{
+    color: rgb(119, 119, 157);
+ }
+    </style>
+</head>
+<body>
+    <div class="boxes">
+        <!-- first child of its parent -->
+        <!-- <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus veritatis distinctio minus consequuntur, veniam mollitia repellendus ipsa vero consequatur architecto tempore ab, harum assumenda! Aliquam veniam quidem obcaecati mollitia ea incidunt libero modi quasi officiis ratione, temporibus iure voluptas culpa tempora commodi dolores placeat omnis expedita optio est repellendus eos ad consequatur ullam? Eius, sit vitae? Doloremque asperiores doloribus ipsa sapiente optio nesciunt laborum dignissimos rerum saepe possimus vitae temporibus ipsum pariatur laudantium quia ad, itaque excepturi, eaque sunt impedit id velit. Eveniet officiis mollitia porro repudiandae saepe eos voluptates in alias, possimus adipisci facilis dolorum pariatur perspiciatis nulla perferendis quidem sunt magnam quia repellendus ullam, est suscipit. Quis molestiae mollitia iusto aliquid qui optio quidem pariatur ea perferendis omnis, sapiente ipsam sunt ex corporis ab quod voluptates ullam reprehenderit. Beatae quod provident id? Ea quod sed nihil repudiandae fugit laborum saepe doloremque blanditiis atque! Similique esse quisquam quasi consectetur cumque veritatis et, facere delectus tenetur error atque consequuntur odit officiis, ab minus nulla magni temporibus molestiae neque corporis animi doloribus saepe explicabo. Dolores quam facilis magnam eos recusandae error, architecto, eligendi blanditiis provident quibusdam debitis natus reiciendis. A saepe ad minima repellendus quae veritatis ullam odit iure impedit aliquam laudantium modi, quasi nulla esse necessitatibus vero consequatur obcaecati soluta dolorem voluptate atque velit culpa in? Sint quibusdam itaque obcaecati eveniet culpa neque saepe reiciendis, omnis ex odit iste vero earum minima temporibus a nobis, sit natus enim id. Odit facilis nostrum, nulla perspiciatis maiores praesentium exercitationem sapiente cumque, porro ea dolorem, magni dolores repudiandae eum! Repudiandae, eveniet, ratione corrupti similique fugit aspernatur atque quibusdam quis quidem quo odit dignissimos nam voluptates tenetur laudantium pariatur mollitia, iste necessitatibus ipsa temporibus magnam labore ut? Ut nobis odio possimus asperiores facilis necessitatibus natus similique recusandae, corporis sit animi assumenda quisquam maxime ratione, a temporibus quia, nihil itaque. Atque modi impedit doloremque asperiores ratione quos aspernatur, suscipit quaerat magni? Odit dignissimos sit natus? Magni quam est modi dolorem, eum dolorum doloremque! At totam reprehenderit iure eaque ipsam assumenda aliquam dolore animi reiciendis eius omnis voluptatum modi rerum temporibus laudantium, architecto unde natus! Officia facere excepturi laudantium quidem sit tempora accusantium alias et, ad quas. Provident ad quis asperiores et animi molestiae iste itaque distinctio. Ipsam placeat facilis quas quibusdam vitae. Tempore aliquid, officiis quod nam, laboriosam ipsam ipsum illo inventore cupiditate quas perspiciatis. Temporibus blanditiis quasi dolorum culpa maxime numquam, atque voluptatibus iusto! Repudiandae tempore vitae vero deserunt, magnam suscipit aut iure ratione laborum nihil voluptas quae non exercitationem labore obcaecati explicabo quas ea est. Possimus explicabo cumque ipsum a sint quia voluptatibus blanditiis reprehenderit natus voluptatem omnis, velit harum aut fuga error beatae nostrum asperiores voluptates. Ab cupiditate incidunt accusantium? Molestias necessitatibus porro, eligendi commodi quisquam nobis.</div>  -->
+         <div class="box">I m first box</div>
+        <!-- second child of its parent -->
+        <div data-color="primary" class="box">I m a box</div>
+        <!-- thirs child of its parent -->
+        <div class="box">I m a box</div>
+        <!-- fourth child of its parent -->
+        <div class="box">I m a box</div>
+        <input type="text" placeholder="type your name">
+    </div>
+</body>
+</html>
