@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS FlexBox</title>
+    <style>
+
+        /* i will do display flex on container not items */
+        /* important....container ki property container m hi lgti h and item ki item m yaad krlo */
+.container{
+border: 2px solid red;
+display: flex;
+height: 80vh;
+/* text-align: center → centers the text inside an element.
+
+Example:
+p {
+    text-align: center;
+}
+
+This makes the text inside <p> appear in the center.
+
+justify-content: center → centers the items inside a flex container.
+
+Example:
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+This moves the child items to the center of the container.
+
+Easy way to remember:
+text-align → centers text
+justify-content → centers flex items */
+/* justify-content: center; → centers items horizontally (left to right). */
+/* justify-content: center; */
+/* see by commeting it and comment justify content cntre */
+/* by doing justify content ye flex ke and m chla jayega see by commeting upar vala justify content centre and keep only text align items centre */
+/* justify-content: flex-end; */
+/* same ye start m chla jayega see by uncommeting */
+/* justify-content: flex-start; */
+/* by space around he box m bech space aa jayegi or start or nd m box m bhi kone se space aa jayegi jo border h container ka  */
+/* justify-content: space-around; */
+/* by space betwwn hr box k beech space aa jayegi but start or end m nhi aayegi vo kone se chipake rhenge */
+/* justify-content: space-between; */
+/* means sb boxes m equal equal space krdo */
+/* justify-content: space-evenly; */
+/* In CSS Flexbox:
+- justify-content: center; → centers items horizontally (left to right).
+- align-items: center; → centers items vertically (top to bottom). */
+/* see by commeting it only kep justify content centre and then see by keeping both */
+/* same for align items as justify content space btwnne and all i m not writing all */
+align-items: center;
+/* align-items: flex-start; */
+/* align-items: flex-end; */
+/* it makes boxs in column jo pehle row m the see by commeting it */
+/* flex-direction: column; */
+/* by column revese ye ulte ho jayenge means 1 2 3 4 niche se upar ho jayenge */
+/* flex-direction: column-reverse; */
+/* same for row  */
+/* flex-direction: row; */
+/* flex-direction: row-reverse; */
+/* see by coomting it  */
+flex-wrap: wrap;
+/* by reverse 1 2 3 4  niche se start hunge jsese counting 100 99 98 ese ye 1 se ulta start ho jayega */
+/* flex-wrap: wrap-reverse; */
+/* jb hmare box jada ho or ek se jada line m aa rhe ho tb align content centre krte h see in inspect then do align content centre jb 1 line ho tb align item */
+/* there is no justify item in css flexbox */
+/* align-content: center; */
+/* they are two property combined */
+/* row → boxes arrange horizontally (left to right).
+wrap → if boxes don't fit in one row, they move to the next line. */
+/* flex-flow:row wrap; */
+/* so space betwnne box is 13 px i is by this i comment margin from .items firts see by keep margin and commeting gap then comment margin by keep gap */
+/* gap: 13px; */
+/* row-gap: 40px; */
+/* column-gap: 10px; */
+/* m ise ek m hi likh skti hu row gap 40px and col gap 10px */
+gap: 40px 10px;
+}
+/* Normally, the order is:
+1 → 2 → 3 → 4
+After applying order: 1 to item 3, the order becomes:
+1 → 2 → 4 → 3
+Why? Flex items have order: 0 by default. Item 3 has order: 1, so it appears after the items with order: 0. */
+/* isse jo flex item h unka order jese 1,2,3,4 h */
+/* but if m kisi item ka order km krdu to vo pehle aayegga ex in html see   <div class="item">3</div> ye pehle ese h isme m order lga du ex  <div class="item order-1">3</div> yha mene ke or class add kr di order-1 so ab mera 3 sbse end m ajega jiski order aa jayegga 1,2,4 se */
+/* order property changes the display order of flex items.
+   Default order is 0.
+   Items with smaller order values appear first.
+   Example: order: 1 moves an item after items with order: 0.
+   If two items have the same order, their HTML order is maintained.
+*/
+.order-1 {
+    order: 1;
+}
+.order-1{
+    order: 1;
+}
+.order-2{
+    order: 2;
+}
+.order-3{
+    order: 3;
+}
+
+
+
+
+
+.item{
+    /* by default always 0 */
+    /* flex-grow: 1; */
+    height: 72px;
+    width: 72px;
+    background-color:rgb(203, 121, 203) ;
+    border: 2px solid black;
+    /* margin: 3px; */
+}
+
+.item1{
+    /* so box1 will take the space  of two */
+    /* flex-grow: 2; */
+    flex-shrink: 2;
+}
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="item item1">1</div>
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <!-- <div class="item order-1">3</div> -->
+           
+            <div class="item">4</div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+          
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+       
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+    
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+         
+            <div class="item"></div>
+          
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+           
+          
+        
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+      
+         
+       
+        </div>
+    </main>
+</body>
+</html>
