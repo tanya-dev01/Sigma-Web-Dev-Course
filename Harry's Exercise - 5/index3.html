@@ -1,0 +1,139 @@
+<!-- This is my code i wrote myself after understand Harry's Video -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+  position: sticky;
+            top: 0;
+        }
+
+        nav{
+            background-color: rgb(212, 84, 212);
+            height: 55px;
+          
+        }
+ul{
+    display: flex;
+}
+ul li{
+    list-style: none;
+    padding: 13px 23px;
+    margin: 4px;
+
+
+}
+main{
+
+    background-color: black;
+    padding-bottom: 23px;
+}
+.container{
+    background-color: green;
+    /* width: 90vw;
+    height: 60vh; */
+  
+    margin-bottom: 55px;
+
+    padding: 23px 34px;
+    
+}
+.box{
+   text-align: center;
+}
+
+.box1{
+    width: 40vw;
+    height: 250px;
+    background-color: palevioletred;
+    display: inline-block;
+    margin: 28px;
+   
+
+}
+.box2{
+    width: 40vw;
+    background-color: rgb(112, 166, 216);
+    display: inline-block;
+    height: 250px;
+    margin: 28px ;
+    
+
+}
+.comment{
+    border: 2px solid white;
+    width: 50vh;
+    text-align: center;
+    padding: 42px 23px;
+   margin: 50px 34vw;
+    color: white;
+    border-radius: 16px;
+    font-size: 2em;
+    
+
+    
+
+}
+.logo{
+    background-color: rgb(214, 104, 7);
+    width: 32px;
+    height: 32px;
+    bottom: 123px;
+    right: 23px;
+position: fixed;
+    border-radius: 50%;
+}
+ /* .logo{
+    height: 32px;
+    width: 32px;
+    background-color: orange;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 12px;
+    right: 23px;
+
+} */
+footer{
+    background-color: antiquewhite;
+    height: 100px;
+}
+    </style>
+ </head>
+ <body>
+    <header>
+<nav>
+    <div class="nav">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+</nav>
+    </header>
+    <main>
+<div class="container">
+    <div class="box">
+<div class="box1"></div>
+<div class="box2"></div>
+    </div>
+</div>
+<div class="comment">
+    <p>Welcome to Sigma Web Development Course.</p>
+</div>
+<div class="logo">
+
+</div>
+    </main>
+    <footer>
+
+    </footer>
+ </body>
+ </html>
