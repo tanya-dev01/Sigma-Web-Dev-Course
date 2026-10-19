@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+                font-family: "Baloo Bhaijaan 2", sans-serif;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+
+        nav {
+            background-color: rgb(3, 11, 82);
+            align-items: center;
+            display: flex;
+            padding-right: 25px;
+        }
+
+        .logo {
+            background-color: orange;
+            width: 33px;
+            height: 33px;
+            border-radius: 50%;
+            margin: 21px;
+            position: fixed;
+            left: 12px;
+
+
+
+
+
+
+        }
+
+        .logo p {
+            color: white;
+            padding: 4px 25px;
+            margin: 0px 22px;
+            font-weight: bold;
+        
+        }
+
+        ul {
+            display: flex;
+            margin-right: auto;
+
+
+        }
+
+        li {
+
+            color: white;
+            list-style: none;
+            padding: 12px 24px;
+            margin: 15px 24px;
+          
+
+
+
+
+
+        }
+
+        .button1 {
+
+            background-color: orange;
+            padding: 7px 23px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+          
+        }
+
+        .container {
+            height: 280px;
+            background-color: rgb(145, 167, 214);
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          
+
+
+
+        }
+
+        .container h1 {
+            padding: 27px 0px 0px 63px;
+            margin: 5px 32px;
+         
+        }
+
+        .container p {
+            padding: 8px 0px 0px 64px;
+            margin: 14px 33px;
+            color: rgb(89, 79, 79);
+         
+        }
+
+        .container .button2 button {
+            background-color: rgb(144, 148, 182);
+            padding: 7px 20px;
+            margin-left: 97px;
+            border-radius: 9px;
+            background-color: rgb(0, 0, 0);
+            text-align: center;
+            cursor: pointer;
+            color: white;
+         
+
+        }
+
+        .image {
+            background-color: rgb(95, 131, 179);
+            width: 18vw;
+            height: 24vh;
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-right: 84px;
+         
+
+        }
+
+        .image>p {
+
+            color: white;
+          
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .heading {
+            display: flex;
+            justify-content: center;
+          
+
+        }
+
+        .heading h2 {
+
+            padding: 13px;
+            margin-top: 25px;
+          
+
+        }
+
+        .section {
+            height: 60vh;
+          
+
+        }
+
+        .section h2 {
+            text-align: center;
+
+        }
+
+
+        .box {
+            display: flex;
+            margin: 15px;
+            padding: 3px;
+            justify-content: center;
+            align-items: center;
+           
+
+        }
+
+        .box1 {
+            background-color: rgb(219, 127, 22);
+            width: 15vw;
+           
+            height: 107px;
+            margin: 13px;
+
+            border-radius: 15px 15px 0px 0px;
+        }
+
+        .insidebox1 {
+            background-color: rgb(232, 239, 242);
+            width: 15vw;
+            height: 200px;
+            border-radius: 0px 0px 15px 15px;
+            margin-top: 86px;
+          
+
+        }
+
+        .insidebox1 h3 {
+            padding: 6px;
+            margin: 6px;
+          
+        }
+
+        .insidebox1 p {
+            padding: 6px;
+            margin: 6px;
+            font-size: 15px;
+         
+        }
+
+        .box2 {
+            background-color: rgb(75, 211, 168);
+            width: 15vw;
+    
+            height: 107px;
+            margin: 13px 13px;
+            border-radius: 15px 15px 0px 0px;
+        }
+
+        .insidebox2 {
+            background-color: rgb(232, 239, 242);
+            width: 15vw;
+            height: 200px;
+            border-radius: 0px 0px 15px 15px;
+            margin-top: 86px;
+        
+
+        }
+
+        .insidebox2 h3 {
+            padding: 6px;
+            margin: 6px;
+       
+
+        }
+
+        .insidebox2 p {
+            padding: 6px;
+            margin: 6px;
+            font-size: 15px;
+          
+        }
+
+        .box3 {
+            background-color: rgb(15, 107, 194);
+            width: 15vw;
+            height: 107px;
+            margin: 13px 13px;
+            border-radius: 15px 15px 0px 0px;
+          
+        }
+
+        .insidebox3 {
+
+            background-color: rgb(232, 239, 242);
+            width: 15vw;
+            height: 200px;
+            border-radius: 0px 0px 15px 15px;
+            margin-top: 86px;
+
+           
+        }
+
+        .insidebox3 h3 {
+            padding: 6px;
+            margin: 6px;
+     
+        }
+
+        .insidebox3 p {
+            padding: 6px;
+            margin: 6px;
+            font-size: 15px;
+        
+        }
+
+        .button3 {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            margin: 13px 21px 12px 23px;
+            border-radius: 12px;
+          
+
+        }
+
+        .section2 {
+            height: 170px;
+
+            text-align: center;
+
+
+            background-color: rgb(227, 225, 186);
+            padding-top: 20px;
+          
+
+        }
+
+        .about {
+            border: 2px solid rgb(223, 187, 4);
+
+            background-color: white;
+            width: 30vw;
+            
+            height: 80px;
+            margin: 20px auto;
+            border-radius: 12px;
+            padding: 23px 0px;
+         
+
+        }
+
+        .button4 button {
+            padding: 9px 20px;
+            margin: 10px;
+            background-color: orange;
+            color: black;
+            cursor: pointer;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 12px;
+          
+        }
+
+
+        footer {
+            display: flex;
+            background-color: rgb(4, 17, 68);
+            text-align: center;
+            justify-content: space-between;
+
+            color: white;
+       
+        }
+
+
+
+
+
+        footer h3 {
+            padding: 5px 6px;
+            margin: 32px 7px 7px 45px;
+          
+        }
+
+        .para1 {
+            padding: 14px;
+            margin-left: 40px;
+
+       
+        }
+
+        .para2 {
+            padding: 14px;
+            margin-left: 40px;
+           
+
+        }
+
+        .para3 {
+            padding: 14px;
+            margin-left: 40px;
+              color: white;
+         
+
+        }
+
+
+       
+
+        .para3 a {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+
+            <div class="navbar">
+                <div class="logo">
+                    <p> MyShop</p>
+                </div>
+                <ul>
+                    <li>Home</li>
+                    <li>Shop</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+            <div>
+                <button class="button1">
+                    Login
+                </button>
+
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="text">
+
+                <h1>Learn web Development</h1>
+                <p>HTML, CSS and Flexbox made easy. </p>
+                <div class="button2">
+
+                    <button>Get Started</button>
+                </div>
+            </div>
+
+            <div class="image">
+                <p>Image</p>
+            </div>
+
+        </div>
+
+        <div class="section">
+
+            <div class="heading">
+                <h2>Our Course</h2>
+            </div>
+
+            <div class="box">
+
+                <div class="box1">
+                    <div class="insidebox1">
+                        <H3>HTML</H3>
+                        <p>Learn the basics and build real project step by step</p>
+                        <button class="button3">Enroll</button>
+                    </div>
+                </div>
+                <div class="box2">
+                    <div class="insidebox2">
+                        <h3>CSS</h3>
+                        <p>Learn the basics and build real project step by step</p>
+                        <button class="button3">Enroll</button>
+                    </div>
+                </div>
+                <div class="box3">
+                    <div class="insidebox3">
+                        <h3>JavaScript</h3>
+                        <p>Learn the basics and build real project step by step</p>
+                        <button class="button3">Enroll</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section2">
+
+
+            <div class="about">
+
+                <h3>
+                    Join 10,000 students
+                </h3>
+                <div class="button4">
+                    <button>
+
+                        Signup for free
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+    <footer>
+
+        <div>
+            <h3>My Shop</h3>
+            <p class="para1">Learn.Build.Grow</p>
+        </div>
+
+        <div>
+            <h3>Link</h3>
+            <p class="para2">Home Shop About</p>
+            <p class="para2">Copyright 2026 myshop</p>
+
+        </div>
+        <div>
+            <h3>Contact</h3>
+            <p class="para3">hello@<a href="https://myshop.com">myshop.com</a></p>
+              </div>
+    </footer>
+</body>
+
+</html>
