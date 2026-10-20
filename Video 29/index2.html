@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        .container {
+            border: 2px solid black;
+            display: grid;
+            /* see image */
+         grid-template-areas:"nav nav nav" 
+                               "side article article" 
+                                "footer footer footer";
+        }
+        .items {
+            border: 2px solid red;
+            height: 55px;
+            
+            
+        }
+           .item1 {
+            /* css
+grid-template-areas: "nav nav nav"
+                     "side article article";
+
+.item1 { grid-area: nav; }
+/*
+┌─────────────────────────┐
+│       1  (nav)          │  ← row 1
+├─────────┬───────┬───────┤
+│    2    │   3   │   4   │  ← row 2
+├─────────┼───────┼───────┤
+│    5    │       │       │  ← row 3
+└─────────┴───────┴───────┘
+*/
+
+/* css
+grid-template-areas: "nav nav nav"
+                     "side article article";
+
+.item1 { grid-area: nav; }
+
+Kyun item 1 itna lamba hai:
+
+"nav nav nav" ka matlab hai ki nav naam teeno columns mein hai.
+grid-area: nav; ka matlab hai “item 1 ko nav wali jagah do”.
+To item 1 teeno columns ki jagah le leta hai, aur poori width ka dikhta hai.
+
+Kyun item 1 ke andar lines nahi hain, aur 2, 3, 4 ke beech hain:
+
+Grid ki lines invisible hoti hain. Jo dikhta hai wo item ka red border hai.
+Item 1 ek hi box hai, to uska ek hi border hai, chahe wo 3 cells ki jagah le.
+Items 2, 3, 4 alag-alag boxes hain, har ek ko 1 cell mili hai, isliye unke beech lines dikhti hain.
+*/
+
+/* 
+5 ke liye row 2 mein jagah nahi bachi, to grid khud row 3 bana deta hai.
+side aur article kisi item ko nahi diye gaye, to wo cells khali rehte hain (bas naam hain). */ 
+            /* in item4 grid area is nav */
+         grid-area: nav;
+         background-color: rgb(184, 114, 23);
+
+        }
+        .item2 {
+               grid-area: side;
+               background-color: blueviolet;
+        }
+        .item3 {
+               grid-area: article;
+               background-color: aqua;
+
+        }
+        .item4 {
+            /* means end m footer dedo */
+               grid-area: article;
+               grid-area: footer;
+               background-color: cadetblue;
+        }
+        /* after this final ouput see aafter run
+        /*
+┌─────────────────────────┐
+│  1  (nav)  orange       │  ← row 1
+├─────────┬───────────────┤
+│ 2 side  │ 3 article     │  ← row 2
+│ violet  │ aqua          │
+├─────────┴───────────────┤
+│  4  (footer) cadetblue  │  ← row 3
+├─────────┬───────────────┤
+│ 5       │               │  ← row 4 (grid ne khud banayi)
+└─────────┴───────────────┘
+*/
+/* 
+Kaun sa box kyun bada hai:
+
+Box 1 bada hai: "nav nav nav" mein nav 3 columns mein likha hai. grid-area: nav se box 1 teeno columns le leta hai.
+Box 3 bada hai: "side article article" mein article 2 columns mein likha hai. Isliye 3 do columns le leta hai, aur 2 se doguna chauda dikhta hai.
+Box 4 bada hai: "footer footer footer" mein footer 3 columns mein hai. Box 4 ko grid-area: footer mila, to wo poori row le leta hai.
+Box 2 chhota hai: side sirf 1 column mein likha hai, isliye 2 ko sirf ek cell milti hai.
+
+Box 4 mein 2 lines kyun: tumne grid-area: article; likha aur uske baad grid-area: footer;. Neeche wali line jeet jati hai, to 4 footer mein gaya. article wali line ka koi asar nahi hai, use hata sakti ho.
+
+Box 5 kahan gaya: 5 ko koi naam nahi diya gaya. Template ki teeno rows pehle se bhar chuki hain, to grid ne row 4 khud bana di aur 5 uske pehle column mein aaya. Uska koi background nahi hai, isliye sirf red border dikhta hai. */
+
+/* Tumne grid-template-columns nahi diya, isliye teeno columns barabar chaudai ke hain. */ 
+/* see by uncommeting */
+/*  through this i can ovelap item as jo box 5 niche khud bn gya h vo 1 nav m chla jayega khali 3 rows rhenge char ki jgh and 1 ke upar 5 aa jayega because item5 ki css m last m use kr rhi hu */
+/* .item5{
+ grid-area: nav;   
+} */
+     
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="items item1">1</div>
+        <div class="items item2">2</div>
+        <div class="items item3">3</div>
+        <div class="items item4">4</div>
+        <div class="items item5">5</div>
+    </div>
+</body>
+</html>

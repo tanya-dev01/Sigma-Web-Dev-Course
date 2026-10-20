@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .container {
+             border: 2px solid black;
+             display: grid;
+             width: 80vw;
+             /* i gave height to do align items centre see by commting it for justify contnt i dont need height becuase it centre horizontally
+              */
+             height: 80vh;
+             /* grid-template-columns: 120px 100px; */
+             /* grid-template-rows:100px 100px 100px; */
+             /* means if width is 80vw means 80%of viewport width so my col will if 1fr 1fr 1fr means 80% viewport width ka 1/3 , 1/3 and 1/3 */
+             /* fr is a unit specially used in grid */ /*
+             important: this is widthout width 55px from items so remove 55px then it will look like it.
+ ┌──────────────────────────────────────────────────────────────┐
+│                  container (80vw wide)                       │
+│                                                              │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐         │
+│  │      1       │ │      2       │ │      3       │         │
+│  └──────────────┘ └──────────────┘ └──────────────┘         │
+│                                                              │
+│  ┌──────────────┐ ┌──────────────┐                           │
+│  │      4       │ │      5       │                           │
+│  └──────────────┘ └──────────────┘                           │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
+
+Why?
+You have:
+.container {
+    width: 80vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+   important: this is widthout width 55px from items so remove 55px then it will look like it.
+So the container has 3 equal columns.
+
+If your screen width were, for example, 1000px:
+- 80vw = 800px
+- 3 columns = 800 ÷ 3 ≈ 266.67px each
+So:
+Column 1       Column 2       Column 3
+   ↓              ↓              ↓
+┌────────┐     ┌────────┐     ┌────────┐
+│   1    │     │   2    │     │   3    │
+├────────┤     ├────────┤     ├────────┤
+│   4    │     │   5    │     │        │
+└────────┘     └────────┘     └────────┘
+
+Also, because you gave each .items:
+height: 55px;
+
+each grid item will have a height of about 55px + its borders. */
+             grid-template-columns: 1fr 1fr 1fr;
+             /* means 1fr ko 4 bar repeat krdo by repeat */
+             /* grid-template-columns: repeat(4,1fr); */
+             /* min max */
+             /* menans jo mere cell or col ki minimum width h vo 100px hogi and maxium 1fr hogi */
+             grid-template-columns: repeat(4,minmax(100px,1fr));
+
+                /* important: this is widthout width 55px from items so remove 55px then it will look like it. */
+             /* the columns are in the ratio 1 : 3 : 1.
+Total fractions = 1 + 3 + 1 = 5
+So:
+- Column 1 = 1/5 of the available width
+- Column 2 = 3/5
+- Column 3 = 1/5
+It will look roughly like:
+┌───────────────────────────────────────────────────────────────┐
+│                                                               │
+│  ┌──────────┐ ┌──────────────────────────────┐ ┌──────────┐  │
+│  │     1    │ │              2               │ │    3     │  │
+│  └──────────┘ └──────────────────────────────┘ └──────────┘  │
+│                                                               │
+│  ┌──────────┐ ┌──────────────────────────────┐               │
+│  │     4    │ │              5               │               │
+│  └──────────┘ └──────────────────────────────┘               │
+│                                                               │
+└───────────────────────────────────────────────────────────────┘
+
+So compared with:
+1fr 1fr 1fr
+
+you get:
+1fr 1fr 1fr
+
+┌──────────┬──────────┬──────────┐
+│    1     │    2     │    3     │
+├──────────┼──────────┼──────────┤
+│    4     │    5     │          │
+└──────────┴──────────┴──────────┘
+But with:
+1fr 3fr 1fr
+
+┌──────┬──────────────────┬──────┐
+│  1   │        2         │  3   │
+├──────┼──────────────────┼──────┤
+│  4   │        5         │      │
+└──────┴──────────────────┴──────┘
+
+Main point: 1fr 3fr 1fr means the middle column is 3 times wider than each side column. */
+             /* grid-template-columns: 1fr 3fr 1fr; */
+             /* show gap btwwn box */
+             /* gap: 34px; */
+             /* or */
+             /* important:::: dont used padding in grid use gappp */
+             row-gap: 10px;
+             column-gap: 44px;
+             /* CSS Grid Properties (Easy Notes)
+
+1. justify-content
+
+Theory: Moves the whole grid horizontally inside the container when extra space is available.
+
+Before:
+
+┌──────────────────────────────┐
+│ ┌────────────┐               │
+│ │ 1   2   3  │               │
+│ └────────────┘               │
+└──────────────────────────────┘
+
+After justify-content: center;
+
+┌──────────────────────────────┐
+│       ┌────────────┐         │
+│       │ 1   2   3  │         │
+│       └────────────┘         │
+└──────────────────────────────┘
+
+2. justify-items
+
+Theory: Centers all items horizontally inside their own columns.
+
+Before:
+
+┌──────────┬──────────┬──────────┐
+│ ┌───┐    │ ┌───┐    │ ┌───┐    │
+│ │ 1 │    │ │ 2 │    │ │ 3 │    │
+│ └───┘    │ └───┘    │ └───┘    │
+└──────────┴──────────┴──────────┘
+
+After justify-items: center;
+
+┌──────────┬──────────┬──────────┐
+│    ┌───┐ │    ┌───┐ │    ┌───┐ │
+│    │ 1 │ │    │ 2 │ │    │ 3 │ │
+│    └───┘ │    └───┘ │    └───┘ │
+└──────────┴──────────┴──────────┘
+
+3. align-items
+
+Theory: Centers all items vertically inside their grid rows.
+
+Before:
+
+┌──────────┬──────────┐
+│ ┌───┐    │ ┌───┐    │
+│ │ 1 │    │ │ 2 │    │
+│ └───┘    │ └───┘    │
+│          │          │
+└──────────┴──────────┘
+
+After align-items: center;
+
+┌──────────┬──────────┐
+│          │          │
+│   ┌───┐  │   ┌───┐  │
+│   │ 1 │  │   │ 2 │  │
+│   └───┘  │   └───┘  │
+│          │          │
+└──────────┴──────────┘
+
+4. justify-self
+
+Theory: Moves only one item horizontally inside its own column.
+
+Before:
+
+┌──────────┬──────────┐
+│ ┌───┐    │ ┌───┐    │
+│ │ 1 │    │ │ 2 │    │
+│ └───┘    │ └───┘    │
+└──────────┴──────────┘
+
+After .item1 { justify-self: end; }
+
+┌──────────┬──────────┐
+│    ┌───┐ │ ┌───┐    │
+│    │ 1 │ │ │ 2 │    │
+│    └───┘ │ └───┘    │
+└──────────┴──────────┘
+
+Quick revision
+
+justify-content → whole grid horizontally.
+
+justify-items → all items horizontally inside columns.
+
+align-items → all items vertically inside rows.
+
+justify-self → one item horizontally inside its column.
+
+Important: These examples assume there is enough extra space for the items to move. */
+             justify-items: center;
+             /* other properties are same as flex nd flex start */
+             /* justify-items: flex-end; */
+             /* justify-items: flex-start; */
+             /* aftr it if i write align items center it will not centre because
+             height is not given to container so i will add height only for it remeber */
+             align-items: center;
+             /* it centre both justify content and align items */
+             /* place-content: center; */
+             
+        }
+         .items {
+             border: 2px solid red;
+             height: 55px; 
+             width: 55px;  
+           
+         }
+         /* it put 2 on top touch contaainer line with height 80vh upar jo h container m */
+         /* .item2{
+            align-self: start; */
+            /* put 2 in end */
+            /* justify-self: end;
+         } */
+         /* .items4{
+        grid-row: 1/2;
+        grid-column: 1/3;
+        }
+         .items1{
+        grid-row: 1/2;
+        grid-column: 1/2;
+        } */
+    </style>
+</head>
+<body>
+        <div class="container">
+        <div class="items item1">1</div>
+        <div class="items item2">2</div>
+        <div class="items">3</div>
+        <div class="items item4">4</div>
+        <div class="items">5</div>
+    </div>
+</body>
+</html>

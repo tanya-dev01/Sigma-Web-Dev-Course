@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS Grid arranges boxes in rows and columns. */
+        .container{
+border: 2px solid rgb(0, 0, 0);
+/* first see this by keping display flex only */
+/* as in flexbox when we do display flex all items become horizontal to vertical but when here i do grid it will remain vertical koi frk nhi padega but when we do inspct and see container in html u will then "grid" is written there in contaiener which is in body and ye vha dikhaega sare element rows h u hover on grid in inspect*/
+display: grid;
+/* it means ek mujhe 120px ka column chahiye ek mujhe 100px ka ye use do column m devide kr degi */
+/* so by grid template column it will she like this see hown as first fox left second in right third in left fourth in rigght like left right */
+/*           column 1     column 2
+          (120px)      (100px)
+row 1  |   item 1   |   item 2   |
+row 2  |   item 3   |   item 4   |
+row 3  |   item 5   |   (empty)  | */
+/* grid-template-columns:120px 100px ;
+grid-template-rows: 100px 100px; */
+/* 120px           100px in coulmn */
+/* ┌───────────┬─────────┐
+│   Box 1   │  Box 2  │ row 100px 
+├───────────┼─────────┤  
+│   Box 3   │  Box 4  │100px
+├───────────┼─────────┤
+│   Box 5   │         │ third row is of any size because i dont havee given size to it it is not 100px i gve size only 2 rows see  grid-template-rows: 100px 100px;                          fifth element come down because i made 2 col of 120px and 100px so it fill only two next automatically come down.
+└───────────┴─────────┘ */
+/* 
+second ex : if esa hota
+    .container {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px;
+}
+}  */
+  /* output of second ex */
+  /*
+┌─────────┬─────────┬─────────┐
+│  Box 1  │  Box 2  │  Box 3  │  ← 100px here 3 col of 100px and 2 row of 100px
+├─────────┼─────────┼─────────┤
+│  Box 4  │  Box 5  │         │  ← 100px
+└─────────┴─────────┴─────────┘ */ 
+/* 3rd ex: if esa hota 
+.container {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px how will it become in 5 boxes because i gave 3 rows and 3 col  ;
+} */
+ /* grid-template-columns defines the number and width of columns.
+grid-template-rows defines the number and height of rows.
+You defined 3 rows, but with 5 boxes, only 2 rows contain boxes. The third row stays empty. */
+ /* 100px    100px     100px   */
+ /* ┌─────────┬─────────┬─────────┐
+│  Box 1  │  Box 2  │  Box 3  │  100px
+├─────────┼─────────┼─────────┤
+│  Box 4  │  Box 5  │         │  100px
+├─────────┼─────────┼─────────┤
+│         │         │         │  100px
+└─────────┴─────────┴─────────┘
+    100px     100px     100px */
+    grid-template-columns: 120px 100px;
+    /* i can give names to col no and row no as 
+     
+     /*
+ 1           2         3         4  -> column line 3
+/*120px          100px
+┌────────────┬──────────┐
+│            │          │ 100px
+├────────────┼──────────┤
+│            │          │ 100px
+├────────────┼──────────┤
+│            │          │ 100px
+└────────────┴──────────┘
+   
+*/
+    /* so i can give name insted of no
+    as  grid-template-columns: 120px 100px;ye h
+    i can write it as
+     grid-template-columns: [pehla] 120px [doosra]100px [t];
+     means 1 means first line 2 means second line 3 means 3rdline
+  /*120px        100px
+ pehla      doosra      t
+ 1           2          3
+┌────────────┬──────────┐
+│            │          │ 100px
+├────────────┼──────────┤
+│            │          │ 100px
+├────────────┼──────────┤
+│            │          │ 100px
+└────────────┴──────────┘
+   
+*/ 
+grid-template-rows: 100px 100px 100px;
+
+        }
+        .items{
+border: 2px solid red;
+height: 55px;
+width: 55px;
+        }
+        /*  grid-template-columns: 120px 100px; */
+        /*grid-template-rows: 100px 100px 100px  */
+        /*
+┌────────────┬──────────┐
+│   Box 1    │  Box 2   │ 100px
+├────────────┼──────────┤
+│   Box 3    │  Box 4   │ 100px
+├────────────┼──────────┤
+│   Box 5    │          │ 100px
+└────────────┴──────────┘ so i want  box 4 box 1 pr aa jaye  */
+        .item4{
+         /* ONLY .item4 has grid-row: 1/2 and grid-column: 1/2
+      Haan, tumne sahi samjha. item4 mein ye likhne ka matlab hai “4 ko wahan rakho jahan 1 hota hai”.
+
+grid-row: 1/2 = “ 4 ko row number 1 mein rakho”
+grid-column: 1/2 = “column number 1 mein rakho”
+
+Dono ko jodo to 4 ko row 1, column 1 wali pehli jagah mil jati hai.
+   Step 1: grid places item 4 FIRST, because it has a fixed position.
+   
+   ┌────────────┬──────────┐
+   │   Box 4    │          │ 100px
+   ├────────────┼──────────┤
+   │            │          │ 100px
+   ├────────────┼──────────┤
+   │            │          │ 100px
+   └────────────┴──────────┘ */
+   grid-row: 1/2;
+   /* or */
+   /* dono ek hi baat h yate grid row :1/2; ek m hi ya alg lag kese bhi likh lo same for column */
+   /* grid-row-start: 1; */
+   /* grid-row-end: 2; */
+      /* Step 2: now the other items (1, 2, 3, 5) have no position,
+   so grid puts them one by one in the next FREE cell.
+   Row 1 col 1 is already taken by 4, so item 1 goes to row 1 col 2.
+   ┌────────────┬──────────┐
+   │   Box 4    │  Box 1   │ 100px
+   ├────────────┼──────────┤
+   │   Box 2    │  Box 3   │ 100px
+   ├────────────┼──────────┤
+   │   Box 5    │          │ 100px
+   └────────────┴──────────┘
+      120px        100px
+
+   So 4 does NOT overlap 1. Item 1 is pushed to the next free cell.
+   Item 1 only goes under item 4 if item 1 also has
+   grid-row: 1/2 and grid-column: 1/2. */
+   grid-column: 1/2;
+   /* or
+      grid-column: pehla / doosra; by name ek baat h*/
+        }
+        /* see by commeting this item1 or without this item 1 it will look like          
+         Column 1    Column 2
+Row 1     [Box 4]     [Box 1]
+Row 2     [Box 2]     [Box 3]
+Row 3     [Box 5]     [     ] */
+        /* i will do same propoerty in item2 to move box 4 to box 1 and ye overlap ho */
+
+        .item1{
+               /* means to put box 4 at box 1 i want ki mera grid row 1 se start ho or 2 tak jaye */
+            /* . First: grid-row: 1 / 2;
+Matlab: Box 4 ko Row 1 mein rakho.
+.item4 {
+    grid-row: 1 / 2;
+}
+
+    ┌────────────┬──────────┐
+   │   Box 4    │  Box 1   │ 100px
+   ├────────────┼──────────┤
+   │   Box 2    │  Box 3   │ 100px
+   ├────────────┼──────────┤
+   │   Box 5    │          │ 100px
+   └────────────┴──────────┘
+      120px        100px 
+      means ese tha ab css item1 m lg rhi h mtlb item1 yani 1 mein   <div class="items item1">1</div> isme or isme 1 likha h so ab 1 move hoga so khra h ki grid-row:1/2 means jo 1 h use row 1 m le jao so 4 niched ekho 1 ke niche yani row 1 m aa jayega. and when i write grid-col:1/2; means ab 1 an 4 overlap hunge 4 baad m aayega because mera html code m 4 line 1 ke baad h
+After this line, Box 4 Row 1 mein aa jayega, lekin uska column abhi automatic hoga.
+          Column 1   Column 2
+Row 1    [Box 1]    [Box 2]
+         [Box 4]
+Row 2    [Box 3]    [     ]
+Row 3    [Box 5]    [     ] */
+            grid-row: 1/2;
+            /* and grid col bhi 1 se start ho or two tak jaye */
+            /* 2. Now: grid-column: 1 / 2;
+Matlab: Box 4 ko Column 1 mein bhi rakho.
+.item4 {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+}
+
+
+Ab Box 4 Row 1 + Column 1 mein hai, yani Box 1 ke upar overlap karega.
+          Column 1        Column 2
+         line 1–2        line 2–3
+Row 1   ┌─────────────┬───────────┐
+        │ Box  4 +1       Box   2      
+        ├─────────────┼───────────┤
+Row 2   │ Box 3       │           │
+        ├─────────────┼───────────┤
+Row 3   │ Box 5       │           │
+        └─────────────┴───────────┘ */
+        /* Jab tum sirf ye likhti ho:
+.item4 {
+    grid-row: 1 / 2;
+}
+
+
+Box 4 Row 1 mein aata hai, lekin uska column automatically decide hota hai. Agar Column 1 mein Box 1 already hai, toh Box 4 uske neeche dikh sakta hai ya kisi available cell mein place ho sakta hai, depending on Grid placement.
+[     ] ka matlab empty cell, yaani wahan koi box nahi hai.
+Ab jab tum ye dono likhti ho:
+.item4 {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+}
+
+
+Toh Box 4 ko Row 1, Column 1 mein force kiya jata hai.
+          Column 1    Column 2
+Row 1    [Box 4]      [Box 2]
+Row 2    [Box 3]      [Box 5]
+Row 3    [ empty ]    [ empty ]
+
+
+Box 4, Box 1 ke upar aa sakta hai, kyunki dono same cell mein hain. Box 1 delete nahi hota—sirf overlap hota hai. */
+/* Box 1 kahan hai? Box 4 ke neeche, same cell mein. Box 4 usko cover kar sakta hai.
+Box 5 kahan se aaya? Box 4 ab Box 1 wali jagah par hai, isliye automatic placement mein Box 5 Row 2, Column 2 mein aa sakta hai.
+[empty] kya hai? Grid ki khaali cell—wahan koi box nahi hai. */
+/* final output
+             Column 1          Column 2
+           |           |                |
+Row 1      | Box 4     | Box 2          |
+           | (covers   |                |
+           |  Box 1)   |                |
+           |-----------|----------------|
+Row 2      | Box 3     | Box 5          |
+           |-----------|----------------|
+Row 3      |           |                |
+           |___________|________________|
+           Box 1 kahan hai? Box 4 ke peeche hai. Dono same cell mein overlap karte hain, isliye Box 4, Box 1 ko cover kar sakta hai.
+Box 5 neeche kyun aaya? Grid baaki boxes ko automatically next available cells mein place karta hai.
+Empty ka matlab us cell mein koi box nahi hai. */
+/* overall */
+/* .item1, .item4 {
+    grid-row: 1/2;
+    grid-column: 1/2;
+}
+
+Step 1: 1 aur 4 dono ko position mili hai, isliye grid sabse pehle
+inhe place karta hai, aur dono ko ek hi cell (row 1, column 1) mein.
+
+┌────────┬────────┐
+│ 1 + 4  │        │  ← row 1
+├────────┼────────┤
+│        │        │  ← row 2
+├────────┼────────┤
+│        │        │  ← row 3
+└────────┴────────┘
+
+Step 2: baaki boxes (2, 3, 5) ko position nahi mili,
+isliye wo apni order mein agli khali jagah par jate hain.
+
+┌────────┬────────┐
+│ 1 + 4  │   2    │  ← row 1
+├────────┼────────┤
+│   3    │   5    │  ← row 2
+├────────┼────────┤
+│        │        │  ← row 3 (khali)
+└────────┴────────┘
+ column 1  column 2
+   120px     100px
+*/
+
+/* Ab 4 sach mein 1 ke upar aa gaya, kyunki dono ek hi cell mein hain. 4 upar dikhta hai kyunki wo HTML mein 1 ke baad likha hai. */ 
+            grid-column: 1/2;
+        }
+        /* grid-row: 1 / 3;
+2. grid-column: 1 / 2;
+
+}
+.items {
+
+1. border: 2px solid red;
+2. height: 55px;
+3. width: 55px; if like this then means item m ye hota and  .item4{
+ grid-row: 1 / 3;
+ grid-column: 1 / 2;
+    } and .item1{
+     grid-row: 1 / 3;
+grid-column: 1 / 2;} means only i change grid row in both from1/2 to 1/3 then how it look see down/*
+/* Step 1: grid mein lines hoti hain.
+Boxes ke beech aur kinaron par lines hoti hain. Hum inhe number dete hain:
+
+css
+/*
+   1        2        3     ← column lines
+   |        |        |
+1 ─┌────────┬────────┐
+   │        │        │
+2 ─├────────┼────────┤
+   │        │        │
+3 ─├────────┼────────┤
+   │        │        │
+4 ─└────────┴────────┘
+↑ row lines
+*/
+
+/* Step 2: grid-column: 1 / 2 */
+/* Column line 1 se column line 2 tak. Ye left wala column hai. */
+
+/* Step 3: grid-row: 1 / 3
+Row line 1 se row line 3 tak. Ye upar ki 2 rows hain.
+
+Step 4: dono ko jodo.
+Box 1 aur box 4, dono ko same jagah mili hai: left column ki upar ki 2 rows. Isliye dono ek ke upar ek baith jate hain. 4 upar dikhta hai, kyunki wo HTML mein 1 ke baad likha hai.
+
+css */
+/*
+┌────────┬────────┐
+│        │        │
+│ 1 + 4  │        │
+│        │        │
+├────────┼────────┤
+│        │        │
+└────────┴────────┘
+*/
+
+/* Step 5: baaki boxes kahan jayenge? */
+/* 2, 3 aur 5 ko koi jagah nahi bataya gaya. Wo bachi hui khali jagah mein order se baith jate hain. Left column ke upar ke 2 khane to 1 aur 4 ne le liye hain, to wo skip hote hain: */
+
+/* css */ */
+
+/*
+┌────────┬────────┐
+│        │        │
+│ 1 + 4  │   2    │  ← row 1
+│        │        │
+│ (2 rows│────────┤
+│  ki    │   3    │  ← row 2
+│  jagah)│        │
+├────────┼────────┤
+│   5    │        │  ← row 3
+└────────┴────────┘
+ column 1  column 2
+*/
+
+/* Ek line mein: start / end ka matlab hai “is line se shuru karo aur us line par khatam karo”. */ */
+
+    </style>
+</head>
+<body>
+    <div class="container">
+         <!-- in starting take this commanet like by uncommeting it and make <div class="items item4">4</div> this commeting jaroor-->
+        <!-- <div class="items">1</div> -->
+         <!-- i made this because i want ki mera 4 no wla item 1 ki jgh aa jaye when i have
+          grid-template-columns: 120px 100px;
+grid-template-rows: 100px 100px 100px  ; like this  -->
+<!-- ┌────────────┬──────────┐
+│   Box 1    │  Box 2   │ 100px
+├────────────┼──────────┤
+│   Box 3    │  Box 4   │ 100px
+├────────────┼──────────┤
+│   Box 5    │          │ 100px
+└────────────┴──────────┘
+    120px       100px so i wnat 4 box 1 pr aa jaye -->
+        <!-- <div class="items">1</div> -->
+        <div class="items">2</div>
+        <div class="items">3</div>
+        <!-- in starting take this commanet like by uncommeting it and make <div class="items item4">4</div> this commeting jaroor-->
+        <!-- <div class="items">4</div> -->
+         <!-- i made this because i want ki mera 4 no wla item 1 ki jgh aa jaye when i have
+          grid-template-columns: 120px 100px;
+grid-template-rows: 100px 100px 100px  ; like this  -->
+<!-- ┌────────────┬──────────┐
+│   Box 1    │  Box 2   │ 100px
+├────────────┼──────────┤
+│   Box 3    │  Box 4   │ 100px
+├────────────┼──────────┤
+│   Box 5    │          │ 100px
+└────────────┴──────────┘
+    120px       100px so i wnat 4 box 1 pr aa jaye -->
+        <div class="items item1">1</div>
+        <div class="items item4">4</div>
+
+
+        <div class="items">5</div>
+    </div>
+</body>
+</html>
