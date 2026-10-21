@@ -1,0 +1,186 @@
+<!-- Design the wbsite navbar using flexbox -->
+ <!-- this is my code -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+}
+.logo{
+    display: flex;
+}
+
+.logo img{
+    width: 43px;
+    height: 42px;
+    
+    margin: 12px 2px 0px 34px;
+}
+.logo p{
+    padding: 4px;
+    margin: 14px 2px;
+    font-weight: bold;
+    font-size: 22px;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;   /* logo left, .right right */
+    align-items: center;
+}
+.right {
+    display: flex;                    /* list items aur icon ek row mein */
+    align-items: center;
+}
+
+.icon img {
+    width: 33px;
+    height: 34px;
+    margin-right: 30px;
+}
+.navbar ul{
+    display: flex;
+    justify-content: center;
+   
+}
+.navbar ul li{
+    padding: 12px 23px;
+    margin: 12px;
+    list-style: none;
+}
+
+
+.section p {
+    font-size: 34px;
+}
+.container1,.container2{
+    display: flex;
+    flex-wrap: wrap;
+}
+.box{
+    width: 14vw;
+    height: 150px;
+    background-color: rgb(231, 235, 238);
+    margin: 20px;
+}
+.button{
+    display: flex;
+}
+.button2{
+    
+}
+.button3{
+
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+        <div class="navbar">
+            <div class="logo">
+                <img  src="https://avatars.githubusercontent.com/u/8560479?s=200&v=4" alt="">
+                <p>UltraEdit</p>
+            </div>
+<div class="right">
+
+    <ul>
+        <li>Product</li>
+        <li>Pricing</li>
+        <li>Resources</li>
+        <li>About us</li>
+    </ul>
+    <div class="icon">
+        <img src="https://media.gettyimages.com/id/831648336/vector/translate-icon-vector-translation-from-japanese-to-english-flat-icon.jpg?s=612x612&w=gi&k=20&c=1k3bmila5YY2OE7L8sv6cvA4muNxnzAhAObMqMdvTN0=" alt="Language">
+    </div>
+</div>
+    </div>
+</nav>
+    </header>
+    <main>
+<div class="section">
+    <p>Download <strong>UltraEdit</strong> for Windows</p>
+</div>
+<p>Download and try UltraEdit before you buy it! This download includes the full Windows version of the text editor.</p>
+<div class="button1">
+    <button>DOWNLOAD MAC OR LINUX VERSION</button>
+</div>
+<div class="container1">
+    <div class="box box1">
+        <div class="button">
+
+            <div class="button2">
+                <button>Download 32-bit</button>
+            </div>
+            <div class="button3">
+                <button>Download 64-bit</button>
+            </div>
+</div>
+    </div>
+    <div class="box box2">
+        <div class="button">
+
+            <div class="button2">
+                <button>Download 32-bit</button>
+            </div>
+            <div class="button3">
+                <button>Download 64-bit</button>
+            </div>
+</div>
+    </div>
+    <div class="box box3">
+        <div class="button">
+
+            <div class="button2">
+                <button>Download 32-bit</button>
+            </div>
+            <div class="button3">
+                <button>Download 64-bit</button>
+            </div>
+</div>
+</div>
+
+
+<div class="box box1">
+    <div class="button">
+        
+        <div class="button2">
+            <button>Download 32-bit</button>
+        </div>
+        <div class="button3">
+            <button>Download 64-bit</button>
+        </div>
+    </div>
+</div>
+<div class="box box2">
+    <div class="button">
+        
+        <div class="button2">
+            <button>Download 32-bit</button>
+        </div>
+        <div class="button3">
+            <button>Download 64-bit</button>
+        </div>
+    </div>
+</div>
+<div class="box box3">
+    <div class="button">
+        
+        <div class="button2">
+            <button>Download 32-bit</button>
+        </div>
+        <div class="button3">
+            <button>Download 64-bit</button>
+            
+        </div>
+    </div>
+</div>
+
+</div>
+    </main>
+</body>
+</html>

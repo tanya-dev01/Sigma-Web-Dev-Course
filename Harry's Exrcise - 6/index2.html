@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+.logo img{
+width: 164px;
+
+
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    /* why use aligmn items in place of align content becaus only signle row in nav if 2 or more thsn 2 then align content */
+    /* - align-items → aligns items vertically (cross-axis) in a flex row.
+- align-content → aligns multiple rows/lines of flex items; it usually does nothing if there is only one row.
+Here your <nav> has one row, so use align-items: center. */
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.right ul{
+    display: flex;
+    gap: 34px;
+}
+.right ul li{
+    list-style: none;
+}
+.right img{
+    width: 33px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="">
+            </div>
+                <div class="right">
+                    <ul>
+                        <li>Product</li>
+                        <li>Pricing</li>
+                        <li>Resources</li>
+                        <li>About us</li>
+                       <li>
+
+                           <img width="30px" src="translate.png" alt="">
+                       </li>
+                        
+                    </ul>
+            </div>
+        </nav>
+    </header>
+</body>
+</html>
