@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>CSS Transform masterclass</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 50px;
+            height: 50px;
+            background-color: aqua;
+            border: 2px solid black;
+            /* transform in CSS is used to move, rotate, resize, or tilt an element without changing the normal document flow. */
+            /* transform help in  rotate box by 40 degree */
+            /* transform: rotate( 40deg ); */
+            /* i can also turn it by using turn by 90degree see down by commeting  transform: rotate( 40deg ); only keep thsese 4 line  transform: rotate(0.25turn);
+              display: flex;
+                   justify-content: center;
+                      align-items: center; */
+            /* transform: rotate(0.25turn); */
+            /* now got turn 180 degrree  only keep like upar 4 line*/
+            /* transform: rotate(0.5turn); */
+            /* it will rotate by x axis */
+            /* transform: rotateX(40deg); */
+            /* it will rotate by y axis */
+            /* transform: rotateY(96deg); */
+            /* now it roate very small by 9 in y axis not 96 jitna nhi hoga */
+             /* transform: rotateY(9deg); */
+             /*  it rotate by z axis*/
+             /* transform: rotatez(9deg); */
+
+
+             /* scale property :isme m ise bada chota kr skti hu.. */
+             /* by 1.6 ye 1.6 times bada ho jayega apn original size s */
+             /* transform: scale(1.6); */
+             /* ye x axis m bada ho jayega */
+             /* transform: scaleX(1.6); */
+/* jese kisi ne khch diya ho upar niche se */
+             /* transform: skew(5deg); */
+             /* jese kisi ne kch diya ko left right se */
+             /* remeber skew z axis m nhi hota h only ax,y m hota h */
+                /* transform: skewY(35deg); */
+                /* so by tanslate ye x azis s 34px move ho jayega */
+                /* transform: translateX(34px); */
+                /* so ye width ke 34% se move ho jayega */
+                /* transform: translateX(34%); */
+                /* transform: translateX(100%); */
+                /* move in y by 34px */
+                /* transform: translateY(34px); */
+                /* we can use mutipl property in one */
+                /* yha ye x,y se move yani translate bi ho gya and skew bhi ho gya */
+                /* transform:translateY(100%) skewX(40deg) translateX(45%) ; */
+
+/* transform origin property */
+/* ye 45 deg se turn krega */
+transform: rotate(0.125turn);
+/* so rotate hoga se in inspect by incerasing 50 */
+   transform-origin: -50% -50%;
+
+            /* if i want ki jo box ke andar box text likha h vo centre ho so i did thee thing */
+            /* 1 */
+            display: flex;
+            /* 2 */
+            justify-content: center;
+            /* 3 */
+            align-items: center;
+        }
+        .container{
+            width: 100vw;
+            height: 80vh;
+            border: 2px solid purple;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+box
+        </div>
+    </div>
+</body>
+</html>
