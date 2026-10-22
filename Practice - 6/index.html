@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wanderly</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Baloo+Bhaijaan+2:wght@400..800&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Baloo Bhaijaan 2", sans-serif;
+        }
+
+        body {
+            background-color: rgb(220, 238, 241);
+        }
+
+        nav {
+            justify-content: space-between;
+            align-items: center;
+            display: flex;
+            padding: 17px 31px;
+
+
+        }
+
+        .container {
+            background-color: rgb(7, 132, 134);
+            height: 270px;
+
+
+
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+
+
+        }
+
+        .brand p {
+
+
+            align-items: center;
+            margin-left: 12px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .logo {
+            margin-left: 30px;
+            font-size: 22px;
+
+
+        }
+
+
+        .right {
+            display: flex;
+            margin-right: 70px;
+            align-items: center;
+
+
+        }
+
+        .right ul {
+            display: flex;
+            list-style: none;
+
+            gap: 34px;
+        }
+
+        .right ul li {
+            color: white;
+        }
+
+        .heading1 h1,
+        .heading1 p {
+            padding: 1px 0px 2px 27px;
+            margin-left: 45px;
+            color: white;
+
+
+        }
+
+
+        .button1 button {
+            padding: 9px 17px;
+            margin: 9px 0px 0px 72px;
+            background-color: rgb(254, 207, 0);
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+
+
+        }
+
+
+        .section1 {
+            width: 57vw;
+            height: 60px;
+            background-color: white;
+            margin: -25px auto 36px;
+            /*        ↑     ↑     ↑
+        upar  left-right  neeche
+*/
+            border-radius: 7px;
+            display: flex;
+            justify-content: space-between;
+            /* z-index: 1; */
+
+
+        }
+
+        .destination p:first-child {
+            padding: 3px;
+            margin: 2px 28px;
+
+
+
+        }
+
+        .destination p:nth-child(2) {
+            padding: 0 12px;
+            font-weight: bold;
+        }
+
+        .time p:first-child {
+            padding: 2px;
+            margin: 2px;
+
+        }
+
+        .time p:nth-child(2) {
+            padding: 2px;
+            margin: 2px;
+            font-weight: bold;
+        }
+
+        .guest p:first-child {
+            padding: 2px;
+            margin: 2px;
+
+        }
+
+        .guest p:nth-child(2) {
+            padding: 2px;
+            margin: 2px;
+            font-weight: bold;
+        }
+
+        .button2 button {
+            cursor: pointer;
+            margin: 8px 13px;
+            padding: 7px 23px;
+            background-color: rgb(6, 93, 70);
+            color: white;
+            border-radius: 12px;
+
+
+
+        }
+
+        .heading2 h2 {
+
+
+            text-align: center;
+        }
+
+        .section2 {
+            display: flex;
+            justify-content: center;
+        }
+
+        .box {
+
+
+            width: 18vw;
+            height: 260px;
+            margin: 33px 22px;
+            border-radius: 12px;
+            position: relative;
+            /* p ko box ke andar rakhne ke liye */
+            display: flex;
+            justify-content: center;
+            /* emoji left-right beech mein */
+            align-items: center;
+            /* emoji upar-neeche beech mein */
+        }
+
+        .box p {
+            position: absolute;
+            bottom: 18px;
+            /* niche se gap */
+            left: 18px;
+            /* left se gap */
+            color: white;
+            font-weight: bold;
+        }
+
+        .box1 {
+            background-color: rgb(11, 187, 222);
+
+
+
+        }
+
+        .emoji {
+            font-size: 40px;
+            /* emoji ka size text jaisa badalta hai */
+
+
+        }
+
+        .box2 {
+            background-color: rgb(168, 68, 239);
+        }
+
+        .box3 {
+            background-color: rgb(199, 105, 5);
+        }
+
+        .section3 {
+            width: 57vw;
+            height: 130px;
+            background-color: rgb(168, 232, 232);
+
+
+            margin: 23px auto;
+
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .emoji1 {
+            font-size: 30px;
+
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .section4 {
+            display: flex;
+
+
+            justify-content: center;
+        }
+
+        .capsule {
+            width: 14vw;
+            height: 103px;
+            margin: 26px 23px;
+            border-radius: 10px;
+background-color: white;
+
+
+        }
+
+        .capsule p:first-child {
+            font-weight: bold;
+            font-weight: bold;
+            font-size: 14px;
+            padding: 5px;
+            margin: 2px 0px 2px 6px;
+
+
+
+        }
+
+        .capsule p:nth-child(2) {
+            font-size: 12px;
+            padding: 0px;
+            margin: 2px 0px 2px 14px;
+        }
+
+        .capsule1 {
+
+            background-color: white;
+
+        }
+
+        .circle1 {
+            width: 24px;
+            height: 24px;
+            background-color: rgb(5, 122, 65);
+            border-radius: 50%;
+        }
+
+        .capsule2 {
+            background-color: white;
+        }
+
+        .circle2 {
+            width: 24px;
+            height: 24px;
+            background-color: rgb(214, 105, 17);
+            border-radius: 50%;
+        }
+
+        .capsule3 {
+            background-color: white;
+        }
+
+        .circle3 {
+            width: 24px;
+            height: 24px;
+            background-color: rgb(80, 5, 135);
+            border-radius: 50%;
+
+        }
+
+        .person {
+            display: flex;
+            margin: 12px 0px 0px 12px;
+        }
+
+        .person p {
+            font-size: 12px;
+            padding: 0px;
+            margin: 9px 0px 2px 11px;
+        }
+
+        footer {
+            width: 100%;
+            height: 50px;
+            background-color: rgb(2, 102, 2);
+            display: flex;
+
+
+
+            justify-content: center;
+
+            align-items: center;
+        }
+
+        footer p {
+            color: white;
+        }
+
+        footer p a {
+            text-decoration: none;
+            cursor: pointer;
+            color: white;
+
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+
+                <div class="brand">
+
+                    <span class="logo"> 🌴</span>
+                    <p>Wanderly</p>
+                </div>
+
+                <div class="right">
+
+                    <ul>
+                        <li>Home</li>
+                        <li>Destination</li>
+                        <li>Deal</li>
+                        <li>Contact</li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="heading1">
+
+                <h1>Discover the world, one trip at a time</h1>
+                <p>Handpicked destinations and honest prices for your next adventure</p>
+                <div class="button1">
+                    <button>Explore Now</button>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <main>
+        <div class="section1">
+            <div class="destination">
+
+                <p>Where to?</p>
+                <p>Bali, Indonesia</p>
+            </div>
+
+            <div class="time">
+
+                <p>Check-in</p>
+                <p>12 Nov 2026</p>
+            </div>
+            <div class="guest">
+
+                <p>Guests</p>
+                <p>2 Adults</p>
+            </div>
+            <div class="button2">
+                <button>Search</button>
+            </div>
+        </div>
+        <div class="heading2">
+            <h2>Popular Destination</h2>
+        </div>
+        <div class="section2">
+            <div class="box box1">
+                <span class="emoji">🏖️</span>
+                <p>Maldives</p>
+            </div>
+            <div class="box box2">
+                <span class="emoji">🗼</span>
+                <p>Paris</p>
+            </div>
+            <div class="box box3">
+                <span class="emoji">🏔️</span>
+                <p>Manali</p>
+            </div>
+        </div>
+        <div class="section3">
+            <div class="feature">
+
+                <span class="emoji1">💸</span>
+                <p>Best Prices</p>
+            </div>
+            <div class="feature">
+
+                <span class="emoji1">🛟</span>
+                <p>24/7 Support </p>
+            </div>
+            <div class="feature">
+
+                <span class="emoji1">✈️</span>
+                <p>Easy Booking </p>
+            </div>
+        </div>
+        <div class="section4">
+            <div class="capsule">
+                <p>Amazing trip!</p>
+                <p>Everything was perfectly organised</p>
+                <div class="person">
+
+                    <div class="circle1">
+
+                    </div>
+                    <p>Riya</p>
+                </div>
+            </div>
+            <div class="capsule">
+                <p>Great Value</p>
+                <p>Cheapest deal I could find everywhere</p>
+                <div class="person">
+
+                    <div class="circle2"></div>
+                    <p>Karan</p>
+                </div>
+            </div>
+            <div class="capsule">
+                <p>Will look again</p>
+                <p>Suppport helped me at midnight</p>
+                <div class="person">
+
+                    <div class="circle3">
+
+                    </div>
+                    <p>Neha</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2026 Wanderly . <a href="mailto:hello@wanderly.com">hello@wanderly.com</a></p>
+    </footer>
+</body>
+
+</html>
