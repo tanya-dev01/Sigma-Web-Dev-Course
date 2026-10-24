@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transitions</title>
+    <style>
+        /* see by commeting niche vala keep only ye container and isee niche jo box h bs 2 then see.. */
+       .container{
+background-color: red;
+width: 50vw;
+height: 40vh;
+       }
+       .box{ 
+background-color: aqua;
+width: 6vw;
+height: 7vh; 
+/* iwrite these in box becuase mujhe box ko smooth bnana h */
+/* we use transition property by these four  */
+/* means m transform vali property ko transform krna chati hu */
+ transition-property:transform ; 
+/* now it transition-duration:3s ; means ki ye kone se or width 6vw and height 7vh tak aane m 3 sec lega dheere  dheere smoothly aayega see in insepct by rmeove then again use vo dheere dheereaa rha hoga */
+transition-duration:3s ;
+/* In CSS, ease-in-out makes a transition start slowly, speed up in the middle, and slow down at the end. */
+transition-timing-function:ease-in-out ;
+/*  transition-delay:1s ; it means jese hi m transition property transform lgaungi it take 1sec means 1 sec baad kaam krna shuru krega or 3 sec tak chalega menas 3 sec lega apni position means jo width or height di h vha tak aane m*/
+transition-delay:1s ;
+       }
+
+
+       .translate{
+        /* CSS transition is used to make changes happen smoothly instead of suddenly. */
+        /*   transform: translateX(10vw) translateY(10vh); by this the small blue box on red container vo x se 10vw and y se 10 vh kisakh jayega*/
+        /* now go to inspect and try to remove transition property of this u see jese hi aap remove krte ho vo ek jatke se vhi kone m chla jata h smoothly dheere  dheere nhi jata */
+        /* if i want ki vo smoothly dheerese side ho ajye so we use trasition property */
+         transform: translateX(10vw) translateY(10vh); 
+        } 
+
+
+        /* IMPORTANt:again writing for undrstnding */
+
+       /* see my comeetting upar vala to see niche vali chij i m writing again for understanding */
+       .box{
+        background-color: aqua;
+        width: 6vw;
+        height: 7vh;
+        
+        /* when i do transition property all and put blue color in .translate class niche then translate all krne se ye sari property p lg jata h all ka matlab: sirf us element ki saari badalne wali properties. Baaki elements par nahi.
+        so ye sirf .box pr lgegi transition proprty but .box and .transition niche dono ek hi div m h in html so ye dono .box and .transition dono pr lg gyi..remember transition propertyy class pr nhi div pr lgti h
+*/ 
+/* IMPORTANT:: WHEN U GO IN INSPECT IN STYLE SEE  ".cls " US PR .BOX AD .TRANSITION DONO AA JAYENGE VHA .transition PR CHECKBOX KO CLICK AND UNCLICK KRO..U WILL SEE THAT JO MERA BOX H VO HTANE OR LGANE P SMOOTHLY KHISAKH RHA H OR APNA COLOR AQUA SE BLUE KR RHA H..*/
+        transition-property: all;
+      
+        /* ya to "all" krlo ya (transition-property: transform,background-color;) ye krno dono se same kaam hoga box khiskega 1sec baad 3sec tak or color aqua to blue krega  kyuki all bhi in dono pr hi lg rha tha*/
+        /* transition-property: transform,background-color; */
+        transition-duration: 3s;
+        transition-timing-function: ease-in-out;
+/* this i copy from inspect in ease in out click side small box jo chahe vo sped kro by copying from there */
+        /* transition-timing-function:cubic-bezier(0, 1.52, 1, 1); */
+        transition-delay: 1s;
+
+
+
+        /* IMPOERTANT::::::CHARO PROPERTY EK M HI LIKH DO alg alg likhne ki upar jese likh rkhi h jaroorat nhi h.. */
+        transition: all 3s ease-in-out 1s;
+       }
+       .translate{
+        transform: translateX(10vw) translateY(10vh);
+        /* here when i add scale same box smoothly color change krega in inspect bs scale 2 see chote .box ka size doguna ho jayga means width or height dono doguna bs box chote se bdada hoga same kaam krega  */
+        /* transform: translateX(10vw) translateY(10vh) scale(2); */
+
+
+        background-color: blue;
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box translate">
+
+        </div>
+    </div>
+</body>
+</html>
