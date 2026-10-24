@@ -1,0 +1,363 @@
+<!-- This is my code -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+.logo img{
+width: 164px;
+
+
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    /* why use aligmn items in place of align content becaus only signle row in nav if 2 or more thsn 2 then align content */
+    /* - align-items → aligns items vertically (cross-axis) in a flex row.
+- align-content → aligns multiple rows/lines of flex items; it usually does nothing if there is only one row.
+Here your <nav> has one row, so use align-items: center. */
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ padding: 0 40px 0 100px; 
+}
+.right ul{
+    display: flex;
+    gap: 34px;
+}
+.right ul li{
+    list-style: none;
+}
+.right img{
+    width: 33px;
+}
+.section {
+    display: flex;
+    flex-direction: column;   /* ek ke neeche ek */
+    align-items: center;      /* left-right beech mein */
+    text-align: center;       /* text ki lines bhi beech mein */
+    margin-top: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.heading p:nth-child(2) {
+    max-width: 600px;         /*lambi line na ho, aur accha dikhe */
+}
+
+ 
+.heading p:first-child{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+
+}
+
+.button button{
+padding: 12px 23px;
+color: white;
+ background-color: rgb(16, 211, 221);
+ border-radius: 7px;
+ /* border: 2px solid black; */
+ cursor: pointer;
+ border: none;
+ margin-top: 23px;
+}
+.logosection{
+    display: flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0 40px 0 100px;                  /* nav jaisa hi gap */
+  
+}
+.logosection p{
+    display: flex;
+   margin: 39px 0px 0px 6px;
+}
+.logosection p:nth-child(3){
+    display: flex;
+   /* margin: 39px 0px 0px 6px; */
+   margin-top: 42px;
+   font-size: 12px;
+}
+.logo2 img{
+  
+    width: 40px;
+    margin:32px 0px 0px 0px ;
+    
+}
+main{
+
+  
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    align-items: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: grid;
+      
+margin-top: 40px;
+ grid-template-columns: repeat(3,300px);
+ gap: 30px;
+}
+
+/* tablets */
+@media (max-width:1000px){
+   main{
+
+       grid-template-columns: repeat(2,300px)
+   }
+   
+}
+/* phone */
+@media (max-width:700px) {
+   main{
+    grid-template-columns: 300px;
+ /* justify-items: center; */
+  
+   } 
+}
+
+.box{
+    /* flex-direction: column; */
+    /* width: 17vw; */
+    height: 140px;
+  background-color: rgb(245, 240, 240);
+ /* gap: 30px; */
+ /* margin: 30px; */
+ border-radius: 5px;
+/*
+ grid-template-rows: 100x 100px 100px 100px;
+ grid-template-columns: 100px 100px 100px; */
+ 
+  /* justify-content: space-between; */
+    display: flex;
+    flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ padding: 15px 0px;
+ box-sizing: border-box;
+ /* padding: 0px 15px; */
+}
+
+
+.box p:first-child{
+font-weight: bold;
+
+
+}
+.box p:nth-child(2){
+    margin-top: 12px;
+    font-size: 14px;
+}
+.button {
+    display: flex;
+
+    padding: 5px 10px;
+  
+    margin-top: auto;
+  
+    /* margin-bottom: 34px; */
+    gap: 12px;
+   /* margin-bottom: 12px; */
+   /* justify-content:center; */
+    cursor: pointer;
+    font-weight: bold;
+
+}
+
+
+.button a:first-child{
+    text-decoration: none;
+     border-radius: 5px;
+     font-size: 12px;
+    background-color: rgb(16, 211, 221);
+   padding:15px 9px ;
+}
+.button a:nth-child(2){
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: rgb(57, 221, 16);
+    padding:15px 9px ;
+    font-size: 12px;
+   
+}
+a{
+     color: white;
+
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="">
+            </div>
+                <div class="right">
+                    <ul>
+                        <li>Product</li>
+                        <li>Pricing</li>
+                        <li>Resources</li>
+                        <li>About us</li>
+                       <li>
+
+                           <img width="30px" src="translate.png" alt="">
+                       </li>
+                        
+                    </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="section">
+
+        <div class="heading">
+            <p>Download&nbsp;<strong>UltraEdit</strong> &nbsp;for Windows</p>        
+            <p>Download and try UltraEdit before you buy it! This download includes the full Windows version of the text editor.</p>
+        </div>
+        <div class="button">
+            <button>DOWNLOAD MAC OR LINUX VERSION </button>
+        </div>
+    </div>
+    <div class="logosection">
+        <div class="logo2">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjdxEaOegDifts86VkLN-gvw787q2-QcG5jB8j4jHEvHANMowQEortpf8&s=10" alt="">
+        </div>
+<p>Download UltraEdit</p>
+<p>v2023.1(released 08/16/2023) | Hotfix</p>
+
+    </div>
+
+
+    <main>
+   <div class="box box1">
+    <p>English</p>
+    <div class="button">
+         
+
+       
+           
+             
+   <a href="ue_allinone.exe" download>download 32 bit</a>
+
+                <a href="ue_allinone.exe">download 64 bit</a>
+           
+      
+    </div>
+    </div>
+  
+   <div class="box box2">
+    <p>Deutsch</p>
+    <p>German</p>
+    <div class="button">
+
+       
+                <a href="ue_allinone.exe">download 32 bit</a>
+          
+                <a href="ue_allinone.exe">download 64 bit</a>
+         
+        </div>
+   </div>
+   <div class="box box3">
+    <p>Italiano</p>
+    <p>Italian</p>
+    <div class="button">
+
+     
+                <a href="ue_allinone.exe">download 32 bit</a>
+           
+                <a href="ue_allinone.exe">download 64 bit</a>
+           
+      </div>
+   </div>
+   <div class="box box4">
+    <p>espanol</p>
+    <p>Spanish</p>
+    <div class="button">
+
+    
+                <a href="ue_allinone.exe">download 32 bit</a>
+       
+                <a href="ue_allinone.exe">download 64 bit</a>
+           
+      </div>
+   </div>
+   <div class="box box5">
+    <p>francais</p>
+    <p>French</p>
+    <div class="button">
+
+       
+                <a href="ue_allinone.exe">download 32 bit</a>
+         
+                <a href="ue_allinone.exe">download 64 bit</a>
+           
+     </div>
+   </div>
+   <div class="box box6">
+    <p>Portugues brasileiro</p>
+    <p>Brazilian Portuguese</p>
+    <div class="button">
+
+     
+                <a href="ue_allinone.exe">download 32 bit</a>
+         
+                <a href="ue_allinone.exe">download 64 bit</a>
+           
+    </div>
+</div>
+   <div class="box box7">
+    <p>Japanese</p>
+    <div class="button">
+
+     
+                <a href="ue_allinone.exe">download 32 bit</a>
+        
+                <a href="ue_allinone.exe">download 64 bit</a>
+        
+     
+    </div>
+   </div>
+   <div class="box box8">
+    <p>Korean</p>
+    <div class="button">
+
+     
+                <a href="ue_allinone.exe">download 32 bit</a>
+        
+                <a href="ue_allinone.exe">download 64 bit</a>
+          
+    </div>
+   </div>
+   <div class="box box9">
+    <p>Chinese</p>
+    <div class="button">
+
+    
+                <a href="ue_allinone.exe">download 32 bit</a>
+       
+                <a href="ue_allinone.exe">download 64 bit</a>
+           
+   </div>
+   </div>
+   <div class="box box10">
+    <p>Traditional Chinese</p>
+    <div class="button">
+
+    
+                <a href="ue_allinone.exe">download 32 bit</a>
+      
+                <a href="ue_allinone.exe">download 64 bit</a>
+          
+      </div>
+   </div>
+    </main>
+</body>
+</html>

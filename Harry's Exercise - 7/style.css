@@ -1,0 +1,126 @@
+  * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .logo img {
+            width: 164px;
+
+
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            /* why use aligmn items in place of align content becaus only signle row in nav if 2 or more thsn 2 then align content */
+            /* - align-items → aligns items vertically (cross-axis) in a flex row.
+- align-content → aligns multiple rows/lines of flex items; it usually does nothing if there is only one row.
+Here your <nav> has one row, so use align-items: center. */
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .right ul {
+            display: flex;
+            gap: 34px;
+        }
+
+        .right ul li {
+            list-style: none;
+        }
+
+        .right img {
+            width: 33px;
+        }
+
+        .first {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin: 52px;
+            font-family: sans-serif;
+        }
+
+        .first span {
+            font-size: 40px;
+        }
+
+        .first p {
+            font-size: 18px;
+            width: 43vw;
+            text-align: center;
+
+        }
+
+        .btn {
+/* display: flex; */
+            background-color: #00b6d1;
+            padding: 10px 12px;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            font-weight: 700;
+            margin: 12px 0px;
+cursor: pointer;
+        }
+
+        .green {
+            background-color: #5cb85c;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .small {
+            font-size: 12px;
+        }
+
+        .second {
+            /* display: flex;
+            
+            flex-direction: column; 
+             justify-content: center; */
+            max-width: 63vw;
+            margin: auto;
+            align-items: center;
+        }
+
+        .item {
+            padding: 23px;
+            background-color: rgb(228, 235, 239);
+            border-radius: 12px;
+            font-size: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+        .item-lang{
+            font-weight: 700;
+            text-align: center;
+            padding-bottom: 36px;
+        }
+        .grid{
+            display: grid;
+            grid-template-columns:1fr 1fr 1fr;
+            gap: 12px;
+        }
+        .download :nth-child(2){
+            font-size: 20px;
+        }
+        .download{
+            display: flex;
+            /* justify-content: center; */
+            font-family: sans-serif;
+            align-items: center;
+            gap: 10px;
+            margin-bottom:22px ;
+        }
+        @media screen and (max-width:1000px){
+            .grid{
+            
+                grid-template-columns: 1fr;
+              
+            }
+        }
