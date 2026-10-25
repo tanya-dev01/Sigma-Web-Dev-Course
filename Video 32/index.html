@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations</title>
+    <!-- remember u can use animation and trasition both for simple trasition for complex animation -->
+    <style>
+        /* The animation-direction CSS property sets whether an animation should play forward, backward, or alternate back and forth between playing the sequence forward and backward. */
+        .container{
+background-color: aqua;
+width:30vw;
+height: 80vh;
+
+        }
+        .box{
+width: 34px;
+height: 45px;
+background-color: rgb(179, 136, 73);
+
+/*  ye chije animation m aati h remembber*/
+/* animation: name duration timing-function delay iteration-count direction fill-mode; */
+/* here mene ye   @keyframes TanyaKaAnimation {
+           from{
+
+           } 
+           to{
+transform: translateX(1000px);
+           }
+        } ye keyframe m likha then i m doing animation property ye transition ki trh hi hoti but usse diffrent hoti h.. yha m transition ki trh jese vo .box m lgaya tha ese hi ise lga rhi hu .box m animation see niche */
+         /* now see after inspect m jese hi reload krungi ye chota box jisme box likha h jo container ke andar h 100px tk row m translate krega menas khud chalke 100px tak jayega see after inspect*/
+animation: TanyaKaAnimation;
+/* 3sec tak chalega */
+animation-duration: 3s;
+/* mtlb vo chota box 3 bar left to right jayega */
+animation-iteration-count: 3;
+/*  infinite se ye chalta hi rhega*/
+/* animation-iteration-count: infinite; */
+/* means jo jldi jldi bhagega i can chnage it in inspect and from there i can copy it and paste it here and make my own function  */
+animation-timing-function: ease-out;
+/* here i copy paste it from inspect */
+/* animation-timing-function: cubic-bezier(0, 0, 0, 1.08); */
+/* means jb m page ko reload krungi to ye 1sec baad chalega. */
+animation-delay: 1s;
+/* reverse krne se ye right to left chota box move krega pehle left to right move kr rha tha */
+/* animation-direction: reverse; */
+/* isse mera box simple jese move hora h left to right */
+animation-play-state: running;
+/* pause krne se jese ye left to rright move hora h jese hi pause krenge ye vhi ruk jayega running h box means move hora h jese hi pause kiya ye vhi ruk jata h chahe ye shuru m end m beeech m ya or khi bhi ho see after inspect */
+animation-play-state:paused ;
+
+
+/* important m alg alj upar jo animation ki 7 property likhi h inko ek m hi likh skti hu..by this see niche */
+/* animation: name duration timing-function delay iteration-count direction fill-mode; */
+/* yha m chchu to bs 4 ya kitni bhi property use kr skti hu niche dekho bs 4 ki h  */
+animation: TanyaKaAnimation 3s ease-out 1s infinite;
+/* yha mene upar vali line same li h bs animation repeat 1 kr diya h infinte ki jgh isme end  wala 1 ke baad animation fill mode h ye mene empty chod diya dekho space de rkhi h kyuki fill mode by default none hota h*/
+animation: TanyaKaAnimation 3s ease-out 1s 1  ;
+/* ab ye jb color skin coor to purpl eto yellow kr rha h to forward ki vjh se end m ruk jayega */
+animation: TanyaKaAnimation 3s ease-out 1s 1 forwards ;
+/* here  i can use multiple animations by comma separate values means  as i made Tanya2 keyframe at end i can put both TanyaKa Animation and Tanya2 both in one */
+animation: TanyaKaAnimation 3s ease-out 1s 1,Tanya2 1s ease-in-out 3s 1;
+
+
+        }
+        /* for animations we use "@keyframes" write keyfrmaes and then     @keyframes identifier {
+                from{
+
+           } 
+           to{
+            
+           }
+        }  this type will shown at place of identifier i can write any name here from and to means from means yha se to means yha tak means yha se yaha ytak ye naimation jaye*/
+        @keyframes TanyaKaAnimation {
+           from{
+
+           } 
+           to{
+transform: translateX(1000px);
+           }
+        }
+        /* doing this to undertsnad fill mode */
+        /* animation: TanyaKaAnimation 3s ease-out 1s 1;
+        for this i m changing the keyframe  */
+        /* so after run u see shru m skin color ka h jo box ko mene color de rkha h fir move hote time this purple sa color h vo bn rha h or end m yellow bn rha h */
+        /* for upar vale boxes check krne k liye ise comment krdo keyframe ko then check upar vale */
+           @keyframes TanyaKaAnimation {
+           from{
+background-color: rebeccapurple;
+           } 
+           to{
+            background-color: yellow;
+transform: translateX(1000px);
+           }
+        }
+        /* i can made multiple animations */
+        @keyframes Tanya2 {
+            /* means jab animation 0% ho tab kta ho */
+            0%{
+transform: rotate(100deg);
+            }
+            /* jab animation 20% ho tab kya ho */
+            20%{
+transform: rotate(200deg);
+            }
+            /* jab animation 50% ho tab kya ho */
+            50%{
+transform: rotate(220deg);
+            }
+/* jab animation 80% ho tab kya ho */
+            80%{
+transform: rotate(300deg);
+            }
+            /* jab animation 100% ho tab kya ho */
+            100%{
+transform: rotate(310deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+           Box 
+        </div>
+    </div>
+</body>
+</html>
