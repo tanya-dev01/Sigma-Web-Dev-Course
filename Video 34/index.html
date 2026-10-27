@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Filters</title>
+    <style>
+        /* CSS filters are used to apply visual effects to images or elements.
+img {
+    filter: blur(5px);
+}
+
+
+Filter	Use	Example
+blur()	Makes image blurry	filter: blur(5px);
+brightness()	Changes brightness	filter: brightness(150%);
+contrast()	Changes contrast	filter: contrast(200%);
+grayscale()	Makes image black and white	filter: grayscale(100%);
+sepia()	Gives an old-photo effect	filter: sepia(100%);
+invert()	Inverts colours	filter: invert(100%);
+opacity()	Changes transparency	filter: opacity(50%);
+saturate()	Changes colour intensity	filter: saturate(200%);
+hue-rotate()	Changes colour hues	filter: hue-rotate(90deg);
+drop-shadow()	Adds a shadow	filter: drop-shadow(5px 5px 5px gray);
+
+Multiple filters together:
+img {
+    filter: grayscale(100%) blur(2px);
+}
+
+
+Remember: filter changes an element's visual appearance, not the original image file. */
+        /* img{ */
+            /* img will looks 10px blur */
+            /* filter:blur(10px) ; */
+        /* } */
+        .img1{
+            filter: brightness(122%);
+            filter: brightness(122%) contrast(200%);
+        }
+        .img2{
+            /* filter: invert(1); */
+            /* opacity 0 krne se img gayab ho jayegi */
+            filter: opacity(1);
+        }
+        .img3{
+            /* color grey ho jayega means black in white img ho jayegi*/
+            filter: grayscale(100%);
+            /* ye kuch purane zamane ki trh ki ho jayegii */
+            filter: sepia(100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="img1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtQ72tvnVS_GjoKDO_D4zWJ75qD0O4zXbOFwTmVitcnw&s=10" alt="">
+        <img class="img2" src="
+        https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQgK0Zz5mhiuLolPSuZqdQTOGF1HqG249fqZ0-GQccWQ&s=10" alt="">
+        <img class="img3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM2od13Pvcd3xjoq45O18kELMNm8vaRDDXjT65scJSNKS_ZWBMMOmBxlE&s=10" alt="">
+    </div>
+</body>
+</html>
