@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS object-fit
+object-fit controls how an image/video fits inside its fixed width and height.
+
+Example:
+img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+object-fit: cover
+It makes the image completely fill the box while keeping its original ratio.
+
+👉 If the image doesn't have the same ratio as the box, some part of the image gets cut off.
+
+Think:
+
+Box = 300 × 200
+Image = 500 × 500
+
+cover → fills the entire 300×200 box, but cuts some top/bottom or sides.
+object-fit: cover;
+
+Easy memory:
+cover = box completely covered, image may be cropped. -->
+<!-- object-fit — short
+It controls how an image/video fits inside its given box.
+
+Example:
+img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+object-fit: cover → image fills the whole 300 × 200 box, and some part of the image may be cropped.
+
+Common values:
+- cover → fills box, may crop
+- contain → whole image visible, may leave empty space
+- fill → stretches image to fit
+- none → keeps original size
+- scale-down → chooses smaller of none or contain -->
+      <title>CSS object Fit and position</title>
+   
+    <!-- img background -->
+    <style>
+     
+        /* doing gain for undertsnding agr choti img h so img repat krti h  */
+       .container {
+    height: 280px;
+    width: 220px;
+    border: 4px solid rgb(17, 11, 11);
+    background-color: aqua;
+    /* kbhi kbhi img repeat hoti h jab choti img ho ek ke bad ek so on */
+    /* kbhi kbhi img repeat hoti j so background repeat lgane so vo na x m na y m khi repeat nhi hogi */
+    background-image: url("https://us.123rf.com/450wm/progressman/progressman1909/progressman190900115/130695651-woman-in-black-coat-walking-along-the-sea.jpg?ver=6");
+    background-repeat: no-repeat;
+    background-clip: border-box;
+}
+                img{
+          
+            height: 250px;
+            width:210px ;
+
+
+              /* object-fit: cover; */
+
+              /* object fit contain isse img puri dikhegi koi part edit nhi hoga see by doing it and u know see that img ke upar nhiche or bhi sb jgh space rheggi bs ye umg ko pura or chota dikhata h*see by uncommenting img ke around space hogi/
+              /* - contain → whole image visible, may leave empty space */
+
+
+              object-fit: contain;
+
+
+              /*by doing object position if i want ki meri img vesi hi rhe jese google se li thi edit na ho and "top right " niche dekho krne se ye top right ki img ko edit nhi krega left m shubby ka chera kt rha hoga  */
+              /* means object position krne se vo use jis side ki hm position dete h usi side se katega nhi puri dega jese pehel img thi u will se shubby right hand looks full and also some space in right side hand menas vha s puri dikh rhi h */
+              /* object-position: top right; */
+              /* ye bottom right krne se bottom pura jesi img thi vesa dikhega */
+              /* object-position: bottom right; */
+              /* ye jgh bhi de deti h see by uncommeting */
+              object-position: 10px 20px;
+              /* ye by default hoti h esa krne se img pehle jesi mene width height di tgi vo le legi */
+              /* object-fit: fill; */
+
+
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="container">
+       <!-- instead of giving img hre i can use bakcground see in container -->
+<!-- <img src="https://femina.wwmindia.com/content/2023/dec/shubman-thumb1702372362.jpg" alt=""> -->
+    </div>
+</body>
+</html>

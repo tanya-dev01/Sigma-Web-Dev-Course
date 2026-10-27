@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS object-fit
+object-fit controls how an image/video fits inside its fixed width and height.
+
+Example:
+img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+object-fit: cover
+It makes the image completely fill the box while keeping its original ratio.
+
+👉 If the image doesn't have the same ratio as the box, some part of the image gets cut off.
+
+Think:
+
+Box = 300 × 200
+Image = 500 × 500
+
+cover → fills the entire 300×200 box, but cuts some top/bottom or sides.
+object-fit: cover;
+
+Easy memory:
+cover = box completely covered, image may be cropped. -->
+<!-- object-fit — short
+It controls how an image/video fits inside its given box.
+
+Example:
+img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+object-fit: cover → image fills the whole 300 × 200 box, and some part of the image may be cropped.
+
+Common values:
+- cover → fills box, may crop
+- contain → whole image visible, may leave empty space
+- fill → stretches image to fit
+- none → keeps original size
+- scale-down → chooses smaller of none or contain -->
+    <title>CSS object Fit and position</title>
+    <style>
+        .container{
+          height: 280px;  
+          width: 220px;
+          border: 4px solid rgb(17, 11, 11);
+          background-color: aqua;
+        }
+        img{
+          
+            height: 250px;
+            width:210px ;
+              /* if i want that meri img box m shi aa jaye to i will not gain and again changge height width so i will use object fit */
+              /* cover means cover krlo img ko means img ki width height ko remeber container ki nhi img ki width height ise container se koi mtlb nhi h bs ye img container m jitni width or height m aa rhi h vo cover krlo ye cover hoti hui nhi dikhegi bs ye smjho isne itni jgh leli */
+              /* means ek trh edit krdi so jb hm edit krte h to us hissse ko edit ke time kaat dete h see shubman img uska iright m haath crop h img ko because isne jitni width hegght h usme cover krliya h apsne aaap ko puri nhi li see by commeting it*/
+
+              object-fit: cover;
+
+              /* object fit contain isse img puri dikhegi koi part edit nhi hoga see by doing it and u know see that img ke upar nhiche or bhi sb jgh space rheggi bs ye umg ko pura or chota dikhata h*see by uncommenting img ke around space hogi/
+              /* - contain → whole image visible, may leave empty space */
+
+
+              /* object-fit: contain; */
+
+
+              /*by doing object position if i want ki meri img vesi hi rhe jese google se li thi edit na ho and "top right " niche dekho krne se ye top right ki img ko edit nhi krega left m shubby ka chera kt rha hoga  */
+              /* means object position krne se vo use jis side ki hm position dete h usi side se katega nhi puri dega jese pehel img thi u will se shubby right hand looks full and also some space in right side hand menas vha s puri dikh rhi h */
+              object-position: top right;
+              /* ye bottom right krne se bottom pura jesi img thi vesa dikhega */
+              object-position: bottom right;
+              /* ye jgh bhi de deti h see by uncommeting */
+              /* object-position: 10px 20px; */
+              /* ye by default hoti h esa krne se img pehle jesi mene width height di tgi vo le legi */
+              /* object-fit: fill; */
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- when i put img in this     .container{
+          height: 480px;  
+          width: 599px;
+          border: 2px soild black;
+          background-color: aqua;
+        }
+        img{
+            width:66px ;
+            height: 88px;
+        } useing this css the image goes too small and if i change again ang gain height width of img to fit in to the container it take long time become messy so see this starting m esi h now i m changing css-->
+         
+<img src="https://femina.wwmindia.com/content/2023/dec/shubman-thumb1702372362.jpg" alt="">
+    </div>
+</body>
+</html>
