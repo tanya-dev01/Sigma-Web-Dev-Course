@@ -1,0 +1,452 @@
+/* This is Harry's CSS */
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: black;
+}
+.main {
+  background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/29195c81-5ebb-453e-82e9-d3a50737dfb3/web/IN-en-20261026-TRIFECTA-perspective_ef561213-292c-4768-aef0-c1db800e385e_large.jpg");
+  /* if background size 100vw ho jaye to mujhe max of 1200px,100vw m se jo nda hhoga vo lha do esa krne se zoom hoga when i match it responsive*/
+  /* We use max() so the background image always takes the bigger width.
+- On a big screen → 100vw wins, so the image covers the screen width.
+- On a small screen → 1200px wins, so the image doesn't become too narrow. */
+  /* Big screen: Image takes full screen width (100vw).
+Small screen: Image stays at least 1200px wide. */
+  /* means big ho to bhji puri width le or small ho to bhi 1200px puri width le */
+  background-size: max(1200px, 100vw);
+  /* center  center krne se jab m isme responsive kr liye resize krungi chije cnetre m rhengei */
+  /* center center → keeps the image centred.
+no-repeat → prevents the image from appearing again and again.
+80vh → makes the main section 80% of the screen height. */
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  /* 1. .main par relative kyun?
+.main {
+    position: relative;
+}
+.box {
+    position: absolute;
+    top: 0;
+}
+.main parent hai aur .box child.
+
+position: relative ki wajah se .box ko .main reference milta hai.
+
+Matlab:
+- top: 0 = .main ke top se 0.
+- width: 100% = .main ki width.
+- height: 70vh = box ki height 70vh.
+2. Agar .main par relative nahi lagate?
+Toh .box apne nearest positioned ancestor ko dhoondhega.
+
+Agar koi nahi mila, toh viewport ke according position hoga. */
+  position: relative;
+}
+.main .box {
+  height: 100vh;
+  width: 100%;
+  opacity: 0.7;
+  background-color: black;
+  /* Imagine .main ek room hai aur .box ek black carpet hai.
+.main {
+    position: relative;
+}
+
+.box {
+    position: absolute;
+    top: 0;
+}
+- .main par relative = room ko reference bana diya.
+- .box par absolute = carpet ko room ke according place karo.
+- top: 0 = carpet room ke bilkul top par.
+Agar .main par relative nahi lagate, toh .box apne kisi aur positioned ancestor ko dhoondhega. Agar koi nahi mila, toh viewport ko reference maanega.
+Bas yaad rakho:
+relative parent ko reference banata hai.
+
+absolute child ko us reference ke according place karta hai.
+
+Tumhare Netflix mein .main relative isliye hai taaki black .box poori screen ke bajaye .main ke according position ho. */
+  position: absolute;
+  top: 0;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 90vw;
+  height: 62px;
+  margin: auto;
+}
+nav img {
+  width: 114px;
+  /* 1. .box is absolute, so it searches for its nearest positioned parent/ancestor.
+2. .main is its positioned ancestor, so .box uses .main as its reference.
+3. The image has position: relative and z-index: 10, so the image appears above .box.
+Important: .box never searches for nav img because the image is not its parent or ancestor.
+
+position: relative on the image is for its own layering, not for positioning .box. */
+  /* we use relative because z-index only woek when we gve it some poistion */
+  position: relative;
+  z-index: 10;
+}
+nav button {
+  position: relative;
+  z-index: 10;
+}
+.hero {
+  /* hm .hero m height dene se phle dekhnege kya iske parent ki height set h we know yes .main has 80 vh so we give here 100% means 100% of parent height we took in % because by % it too height acc to parent*/
+  /* if parent height is 70 vh means 700px, then child height: 100% means 700px.
+
+100% = parent's full height. means 70 vh to toh ye bhi utni hi le lega 90 vh full islye 100% menans 100% of parent height */
+  /* we do calc function which help in calculate here we do 100% - 62px remeber leave space inside 100-62 as u see in clac function  */
+  /* here we do calc first keep height 100% and see there is space betwnw line from bottom of image and sepration which do 100-62 here 62 is nav  height we decrease and 100 was his height before by this ye border ko img se chipka deti h..see it */
+  /* .main {
+    height: 70vh;
+}
+nav {
+    height: 62px;
+}
+.hero {
+    height: calc(100% - 62px);
+} */
+  /* Calculation:
+here 100% means 700 px because 100% of main whuch is 70 vh so 
+700px - 62px = 638px
+
+Why? The navbar takes 62px at the top. We want the hero to occupy the remaining space so its content can be centered in that remaining area.
+
+If you gave .hero { height: 100%; }, its height would be 700px, plus the navbar's 62px — making the combined height 762px.
+
+That's why we subtract 62px. */
+  height: calc(100% - 62px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  /* why give this position:::it help ki text upar aa jaye black aopacity ke niche ana rhe. ❤️
+
+.box ka parent .hero nahi hai. Dono .main ke children hain.
+<div class="main">
+    <nav></nav>
+    <div class="box"></div>
+    <div class="hero">My text</div>
+</div>
+Ab dekho:
+1. .box has position: absolute.
+2. .hero has position: relative.
+3. .box ka nearest positioned ancestor .main hai, .hero nahi, because .hero uska parent nahi hai.
+4. .hero par position: relative lagane se .box ki positioning change nahi hoti.
+Toh text upar kyun aaya?
+
+Because .hero HTML mein .box ke baad likha hai. Dono positioned elements hain, aur same stacking level par later element (.hero) upar paint hota hai.
+
+Bas yaad rakho: .hero relative hone se .box uske paas nahi jaata. .hero apni layer mein upar aa sakta hai. */
+  /* Agar .hero se position: relative hata dogi, toh tumhare current layout mein text black overlay ke peeche ja sakta hai.
+
+Kyun?
+- .box = position: absolute
+- .hero = normal element (static)
+- Positioned .box normal .hero ke upar paint ho sakta hai.
+Jab tum .hero ko position: relative deti ho, toh woh positioned element ban jaata hai. Same stacking level par baad mein likha hone ke kaaran woh .box ke upar aa jaata hai.
+
+Yahi reason hai Harry ne .hero par position: relative lagaya! */
+  position: relative;
+  font-family:
+    Netflix Sans,
+    Helvetica Neue,
+    Segoe UI,
+    Roboto,
+    Ubuntu,
+    sans-serif;
+  gap: 23px;
+  padding: 0 37px;
+}
+.hero > :first-child {
+  text-align: center;
+  font-weight: 700;
+  font-size: 40px;
+}
+.hero :nth-child(2) {
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+}
+.hero :nth-child(3) {
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+}
+
+.btn {
+  background-color: rgba(0, 0, 0);
+  padding: 9px 27px;
+  border: none;
+  font-weight: bold;
+  border-radius: 4px;
+  color: white;
+  border: 1px solid rgb(113, 109, 109);
+  font-family:
+    Netflix Sans,
+    Helvetica Neue,
+    Segoe UI,
+    Roboto,
+    Ubuntu,
+    sans-serif;
+}
+.hero-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family:
+    Netflix Sans,
+    Helvetica Neue,
+    Segoe UI,
+    Roboto,
+    Ubuntu,
+    sans-serif;
+}
+.btn-red-sm {
+  background-color: #e50914;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  border: none;
+  padding: 7px 15px;
+  color: white;
+  font-family:
+    Netflix Sans,
+    Helvetica Neue,
+    Segoe UI,
+    Roboto,
+    Ubuntu,
+    sans-serif;
+  /* gap: 12px; */
+  margin-left: 6px;
+}
+.btn-red {
+  background-color: #e50914;
+  color: white;
+  padding: 12px 28px;
+  font-size: 24px;
+  font-weight: 500;
+  border-radius: 4px;
+  line-height: 24px;
+  cursor: pointer;
+  font-family:
+    Netflix Sans,
+    Helvetica Neue,
+    Segoe UI,
+    Roboto,
+    Ubuntu,
+    sans-serif;
+  border: none;
+}
+.main input {
+  padding: 11px 63px;
+
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 4px;
+  background-color: rgba(23, 23, 23, 0.7);
+  border: 2px solid rgb(255, 235, 235, 0.4);
+  color: white;
+  line-height: 24px;
+  cursor: pointer;
+  width: 300px;
+  padding: 11px 15px;
+  text-align: left;
+  font-family:
+    Netflix Sans,
+    Helvetica Neue,
+    Segoe UI,
+    Roboto,
+    Ubuntu,
+    sans-serif;
+}
+input::placeholder {
+  color: rgb(195, 184, 184);
+
+  /* background-color: rgb(0, 0, 0); */
+  font-family:
+    Netflix Sans,
+    Helvetica Neue,
+    Segoe UI,
+    Roboto,
+    Ubuntu,
+    sans-serif;
+}
+.separation {
+  height: 7px;
+  background-color: rgb(64, 57, 57);
+  position: relative;
+  z-index: 20;
+}
+.first {
+  display: flex;
+  justify-content: center;
+  max-width: 70vw;
+  margin: auto;
+  color: white;
+  align-items: center;
+  font-family:
+    Netflix Sans,
+    Helvetica Neue,
+    Segoe UI,
+    Roboto,
+    Ubuntu,
+    sans-serif;
+}
+
+.secImg {
+  /* Step 1: “Mera .secImg TV ka container hai. Iske andar TV image aur video dono hain.”
+Step 2: “Mujhe video ko TV image ke andar bithana hai, image ke neeche nahi.”
+Isliye video ko position: absolute denge.
+Step 3: “Lekin video ko kis jagah ke according bithau?”
+Harry sochta hai: “Iske parent .secImg ko reference bana deta hoon.”
+Isliye parent ko position: relative dete hain. */
+  position: relative;
+}
+.secImg img {
+  width: 400px;
+
+  /* position: relative → image ko positioned element banata hai.
+z-index: 10 → image ko video se upar dikhata hai. */
+  position: relative;
+  z-index: 10;
+}
+.secImg video {
+  position: absolute;
+  width: 400px;
+  top: 60px;
+  right: 0;
+}
+section.first > div {
+  display: flex;
+  flex-direction: column;
+  padding: 34px 0;
+}
+.first > div :first-child {
+  font-size: 30px;
+  font-weight: bolder;
+}
+.first > div :nth-child(2) {
+  font-size: 22px;
+  font-weight: bolder;
+}
+.faq {
+  color: white;
+  padding: 34px;
+  background-color: black;
+  font-family:
+    Netflix Sans,
+    Helvetica Neue,
+    Segoe UI,
+    Roboto,
+    Ubuntu,
+    sans-serif;
+  font-size: 24px;
+}
+.faq h2 {
+  text-align: center;
+  font-size: 45px;
+}
+.faqbox svg {
+  filter: invert(1);
+}
+.faqbox {
+  transition: all 0.3s ease-out;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(44, 42, 42);
+  padding: 24px;
+  max-width: 50vw;
+  margin: 15px auto;
+  cursor: pointer;
+}
+.faqbox:hover {
+  background-color: rgb(102, 98, 98);
+}
+footer {
+  color: white;
+  max-width: 60vw;
+  margin: auto;
+  padding: 14px;
+}
+footer .question {
+  padding: 34px 0;
+}
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  color: white;
+}
+@media screen and (max-width: 1300px) {
+  nav {
+    max-width: 90vw;
+  }
+  .first {
+    flex-wrap: wrap;
+    max-width: 90vw;
+  }
+  
+  .hero > :first-child {
+    text-align: center;
+    font-weight: 700;
+    font-size: 25px;
+  }
+  .hero :nth-child(2) {
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+  }
+  .hero :nth-child(3) {
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+  }
+  .main input {
+    width: 300px;
+  }
+  .hero-button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .faq h2{
+    text-align: center;
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+  footer{
+    max-width: 90vw;
+  }
+  .footer-item{
+    align-items: center;
+  }
+}
+.footer a {
+  font-size: 14px;
+  color: white;
+}
+.footer-item {
+  display: flex;
+  color: white;
+  flex-direction: column;
+  gap: 23px;
+}
